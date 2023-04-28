@@ -19,7 +19,7 @@
         <header class="header-wrap">
           <div class="row align-items-center">
             <div class="col-md-6 col-3">
-              <a class="navbar-logo d-flex align-items-center" href="{% url 'users:index' %}">
+              <a class="navbar-logo d-flex align-items-center" href="{% url 'index' %}">
                 <img src={% static "assets/image/white-logo.svg" %} alt="white-logo" />
                 <span class="fw-700">Tarx</span></a
               >
@@ -393,10 +393,10 @@
             <div class="col-md-6 order-0 order-md-1">
               <ul class="widget-link text-md-end">
                 <li>
-                  <a href="{% url 'users:terms' %}" class="lh-24">Terms of Use</a>
+                  <a href="{% url 'terms' %}" class="lh-24">Terms of Use</a>
                 </li>
                 <li>
-                  <a href="{% url 'users:privacy_policy' %}" class="lh-24 mx-3">Privacy</a>
+                  <a href="{% url 'privacy_policy' %}" class="lh-24 mx-3">Privacy</a>
                 </li>
                 <!-- <li>
                  {% comment %} <a href="{% url 'user:cookies' %}" class="lh-24">Cookies</a>  {% endcomment %}
@@ -408,7 +408,7 @@
       </div>
     </footer>
 
-    <script src={% static "assets/js/popper.min.js" %}></script>
-    <script src={% static "assets/js/bootstrap.min.js" %}></script>
+    <script src={% static "bootstrap/js/popper.min.js" %}></script>
+    <script src={% static "bootstrap/js/bootstrap.min.js" %}></script>
   </body>
 </html>
