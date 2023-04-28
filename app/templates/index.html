@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tarx</title>
-    <link href={% static "bootstrap/css/bootstrap.min.css" %} rel="stylesheet" />
-    <link href={% static "bootstrap/font/space-mono.css" %} rel="stylesheet" />
+    <link href={% static "assets/css/bootstrap.min.css" %} rel="stylesheet" />
+    <link href={% static "assets/font/space-mono.css" %} rel="stylesheet" />
     <link rel="stylesheet" href={% static "assets/css/style.css" %} />
     <link rel="stylesheet" href={% static "assets/css/media.css" %} />
   </head>
@@ -19,17 +19,16 @@
         <header class="header-wrap">
           <div class="row align-items-center">
             <div class="col-md-6 col-3">
-              <a class="navbar-logo d-flex align-items-center" href="{% url 'index' %}">
+              <a class="navbar-logo d-flex align-items-center"
+                 href="{% url 'index' %}">
                 <img src={% static "assets/image/white-logo.svg" %} alt="white-logo" />
-                <span class="fw-700">Tarx</span></a
-              >
+                <span class="fw-700">Tarx</span></a>
             </div>
             <div class="col-md-6 col-9">
               <form class="d-flex justify-content-end">
                 <a class="btn login-btn fw-700 lh-24" href="{% url 'users:login' %}">Log in</a>
-                <a class="btn request-btn fw-700 lh-24" href="{% url 'users:register' %}">
-                  Request Access
-                </a>
+                <a class="btn request-btn fw-700 lh-24"
+                   href="{% url 'users:register' %}">Request Access</a>
               </form>
             </div>
           </div>
@@ -54,279 +53,160 @@
           </div>
           <div class="d-flex company-section">
             <div class="light-blue-logo">
-              <img
-                src={% static "assets/image/logo.svg" %}
-                alt="logo"
-                class="d-block mx-auto"
-              />
+              <img src="{% static "assets/image/logo.svg" %}" alt="logo" class="d-block mx-auto" />
             </div>
             <div>
               <div class="d-flex add-more-section">
-                <img
-                  src={% static "assets/image/icons/plus-icon.svg" %}
-                  alt="plus-icon"
-                  class="plus-icon d-block mx-auto"
-                />
+                <img src="{% static "assets/image/icons/plus-icon.svg" %}" alt="plus-icon" class="plus-icon d-block mx-auto" />
                 <div>
                   <div class="d-flex align-items-center flex-wrap">
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/vertica.svg" %}
-                        alt="vertica-logo"
-                      />
+                      <img src={% static "assets/image/icons/vertica.svg" %} alt="vertica-logo" />
                       <span>Vertica</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/bigquery-mini.svg" %}
-                        alt="bigquery-mini-logo"
-                      />
+                      <img src="{% static "assets/image/icons/bigquery-mini.svg" %}" alt="bigquery-mini-logo" />
                       <span>Bigquery mini</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/elasticsearch.svg" %}
-                        alt="elasticsearch-logo"
-                      />
+                      <img src="{% static "assets/image/icons/elasticsearch.svg" %}" alt="elasticsearch-logo" />
                       <span>Elasticsearch</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/github.svg" %}
-                        alt="github-logo"
-                      />
+                      <img src={% static "assets/image/icons/github.svg" %} alt="github-logo" />
                       <span>GitHub</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/graphql.svg" %}
-                        alt="graphql-logo"
-                      />
+                      <img src={% static "assets/image/icons/graphql.svg" %} alt="graphql-logo" />
                       <span>Graphql</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/cassandra.svg" %}
-                        alt="cassandra-logo"
-                      />
+                      <img src="{% static "assets/image/icons/cassandra.svg" %}" alt="cassandra-logo" />
                       <span>Cassandra</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/close-io.svg" %}
-                        alt="close-io-logo"
-                      />
+                      <img src="{% static "assets/image/icons/close-io.svg" %}" alt="close-io-logo" />
                       <span>Close Io</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/surfer.svg" %}
-                        alt="surfer-logo"
-                      />
+                      <img src={% static "assets/image/icons/surfer.svg" %} alt="surfer-logo" />
                       <span>Surfer</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/hubspot.svg" %}
-                        alt="hubspot-logo"
-                      />
+                      <img src={% static "assets/image/icons/hubspot.svg" %} alt="hubspot-logo" />
                       <span>HubSpot</span>
                     </div>
 
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/postgresql.svg" %}
-                        alt="postgresql-logo"
-                      />
+                      <img src="{% static "assets/image/icons/postgresql.svg" %}" alt="postgresql-logo" />
                       <span>Postgresql</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/denodo.svg" %}
-                        alt="denodo-logo"
-                      />
+                      <img src={% static "assets/image/icons/denodo.svg" %} alt="denodo-logo" />
                       <span>Denodo</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/firebase.svg" %}
-                        alt="firebase-logo"
-                      />
+                      <img src="{% static "assets/image/icons/firebase.svg" %}" alt="firebase-logo" />
                       <span>Firebase</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/google-sheets.svg" %}
-                        alt="google-sheets-logo"
-                      />
+                      <img src="{% static "assets/image/icons/google-sheets.svg" %}" alt="google-sheets-logo" />
                       <span>Google Sheets</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/redis.svg" %}
-                        alt="Redis-logo"
-                      />
+                      <img src={% static "assets/image/icons/redis.svg" %} alt="Redis-logo" />
                       <span>Redis</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/salesforce.svg" %}
-                        alt="salesforce-logo"
-                      />
+                      <img src="{% static "assets/image/icons/salesforce.svg" %}" alt="salesforce-logo" />
                       <span>Salesforce</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/google-ads.svg" %}
-                        alt="google-ads-logo"
-                      />
+                      <img src="{% static "assets/image/icons/google-ads.svg" %}" alt="google-ads-logo" />
                       <span>Google Ads</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/snowflake.svg" %}
-                        alt="snowflake-logo"
-                      />
+                      <img src="{% static "assets/image/icons/snowflake.svg" %}" alt="snowflake-logo" />
                       <span>Snowflake</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/stripe.svg" %}
-                        alt="stripe-logo"
-                      />
+                      <img src={% static "assets/image/icons/stripe.svg" %} alt="stripe-logo" />
                       <span>Stripe</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/vertica.svg" %}
-                        alt="vertica-logo"
-                      />
+                      <img src={% static "assets/image/icons/vertica.svg" %} alt="vertica-logo" />
                       <span>Vertica</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/AWS-athena.svg" %}
-                        alt="AWS-athena-logo"
-                      />
+                      <img src="{% static "assets/image/icons/AWS-athena.svg" %}" alt="AWS-athena-logo" />
                       <span>AWS Athena</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/sendgrid.svg" %}
-                        alt="sendgrid-logo"
-                      />
+                      <img src="{% static "assets/image/icons/sendgrid.svg" %}" alt="sendgrid-logo" />
                       <span>Sendgrid</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/slack.svg" %}
-                        alt="slack-logo"
-                      />
+                      <img src={% static "assets/image/icons/slack.svg" %} alt="slack-logo" />
                       <span>Slack</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/AWS-dynamodb.svg" %}
-                        alt="AWS-dynamodb-logo"
-                      />
+                      <img src="{% static "assets/image/icons/AWS-dynamodb.svg" %}" alt="AWS-dynamodb-logo" />
                       <span>AWS Dynamodb</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/outreach-io.svg" %}
-                        alt="outreach-io"
-                      />
+                      <img src="{% static "assets/image/icons/outreach-io.svg" %}" alt="outreach-io" />
                       <span>Outreach io</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/AWS-lamda.svg" %}
-                        alt="AWS-lamda-logo"
-                      />
+                      <img src="{% static "assets/image/icons/AWS-lamda.svg" %}" alt="AWS-lamda-logo" />
                       <span>AWS Lamda</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/AWS-redshift.svg" %}
-                        alt="AWS-redshift-logo"
-                      />
+                      <img src="{% static "assets/image/icons/AWS-redshift.svg" %}" alt="AWS-redshift-logo" />
                       <span>AWS Redshift</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/AWS-s3.svg" %}
-                        alt="AWS-s3-logo"
-                      />
+                      <img src={% static "assets/image/icons/AWS-s3.svg" %} alt="AWS-s3-logo" />
                       <span>AWS S3</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/cloud-storage.svg" %}
-                        alt="cloud-storage-logo"
-                      />
+                      <img src="{% static "assets/image/icons/cloud-storage.svg" %}" alt="cloud-storage-logo" />
                       <span>Cloud Storage</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/shopify.svg" %}
-                        alt="shopify-logo"
-                      />
+                      <img src={% static "assets/image/icons/shopify.svg" %} alt="shopify-logo" />
                       <span>Shopify</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/sales.svg" %}
-                        alt="sales-logo"
-                      />
+                      <img src={% static "assets/image/icons/sales.svg" %} alt="sales-logo" />
                       <span>Salesforce</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/twilio.svg" %}
-                        alt="twilio-logo"
-                      />
+                      <img src={% static "assets/image/icons/twilio.svg" %} alt="twilio-logo" />
                       <span>Twilio</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/elasticsearch.svg" %}
-                        alt="elasticsearch-logo"
-                      />
+                      <img src="{% static "assets/image/icons/elasticsearch.svg" %}" alt="elasticsearch-logo" />
                       <span>Elasticsearch</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/cassandra.svg" %}
-                        alt="cassandra-logo"
-                      />
+                      <img src="{% static "assets/image/icons/cassandra.svg" %}" alt="cassandra-logo" />
                       <span>Cassandra</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/Intercom.svg" %}
-                        alt="Intercom-logo"
-                      />
+                      <img src="{% static "assets/image/icons/Intercom.svg" %}" alt="Intercom-logo" />
                       <span>Intercom</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/wordpress.svg" %}
-                        alt="wordpress-logo"
-                      />
+                      <img src="{% static "assets/image/icons/wordpress.svg" %}" alt="wordpress-logo" />
                       <span>Wordpress</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/notion.svg" %}
-                        alt="notion-logo"
-                      />
+                      <img src={% static "assets/image/icons/notion.svg" %} alt="notion-logo" />
                       <span>Notion</span>
                     </div>
                     <div class="company-name">
-                      <img
-                        src={% static "assets/image/icons/zendesk.svg" %}
-                        alt="zendesk-logo"
-                      />
+                      <img src={% static "assets/image/icons/zendesk.svg" %} alt="zendesk-logo" />
                       <span>Zendesk</span>
                     </div>
                     <div class="add-more-text lh-24">
@@ -335,9 +215,9 @@
                   </div>
                 </div>
               </div>
-              <a class="btn request-btn fw-700 lh-24 m-30" type="submit" href="{% url 'users:register' %}">
-                Request access to the private beta
-              </a>
+              <a class="btn request-btn fw-700 lh-24 m-30"
+                 type="submit"
+                 href="{% url 'users:register' %}">Request access to the private beta</a>
             </div>
           </div>
         </div>
@@ -354,9 +234,7 @@
                 <img src="{% static 'assets/image/black-logo.svg' %}" alt="black-logo" />
                 <span class="fw-700">Tarx.com</span>
               </a>
-              <a href="mailto:howdy@tarx.com" class="footer-mail d-block lh-24"
-                >mailto:howdy@tarx.com</a
-              >
+              <a href="mailto:howdy@tarx.com" class="footer-mail d-block lh-24">mailto:howdy@tarx.com</a>
             </div>
             <div class="col-md-7">
               <div class="widget">
@@ -365,18 +243,11 @@
                   learning while we learn it.
                 </p>
                 <div class="d-flex email-box">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id=""
-                    placeholder="Enter your email"
-                  />
-                  <button
-                    class="btn request-btn fw-700 lh-24 subscribe-btn"
-                    type="submit"
-                  >
-                    Subscribe
-                  </button>
+                  <input type="email"
+                         class="form-control"
+                         id=""
+                         placeholder="Enter your email" />
+                  <button class="btn request-btn fw-700 lh-24 subscribe-btn" type="submit">Subscribe</button>
                 </div>
               </div>
             </div>
@@ -386,9 +257,7 @@
         <div class="footer-bottom">
           <div class="row">
             <div class="col-md-6 order-1 order-md-0">
-              <p class="mb-0 lh-24">
-                © 2022-2023 TARX INC. All rights reserved.
-              </p>
+              <p class="mb-0 lh-24">© 2022-2023 TARX INC. All rights reserved.</p>
             </div>
             <div class="col-md-6 order-0 order-md-1">
               <ul class="widget-link text-md-end">
@@ -408,7 +277,7 @@
       </div>
     </footer>
 
-    <script src={% static "bootstrap/js/popper.min.js" %}></script>
-    <script src={% static "bootstrap/js/bootstrap.min.js" %}></script>
+    <script src={% static "assets/js/popper.min.js" %}></script>
+    <script src={% static "assets/js/bootstrap.min.js" %}></script>
   </body>
 </html>
