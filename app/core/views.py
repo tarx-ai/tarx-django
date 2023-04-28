@@ -14,5 +14,15 @@ def privacy_policy(request):
     return render(request, "privacy_policy.html")
 
 
+def page_404(request):
+    return render(
+        request,
+        "404.html",
+    )
+
+
 def handler404(request, *args, **kwargs):
-    return HttpResponseNotFound("<h1>Page not found</h1>")
+    return render(
+        request,
+        "404.html",
+    )

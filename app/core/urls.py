@@ -11,6 +11,7 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("terms", views.terms, name="terms"),
     path("privacy-policy", views.privacy_policy, name="privacy_policy"),
+    path("404", views.page_404, name="page_not_found"),
     # apps urls
     path("", include("users.urls", namespace="users")),
 ]
