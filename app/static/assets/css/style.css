@@ -54,11 +54,16 @@ ol {
   box-shadow: none;
   border-color: #d0d5dd;
 }
+.color-primary-black{
+  color:#12121280
+}
 
+.fw-bold{
+  font-weight: bold;
+}
 /* -----------------------*
      BANNER CSS STYLE
 *-------------------------*/
-
 .bg-black {
   background-color: #121212;
 }
@@ -406,3 +411,28 @@ ol {
 }
 
 
+
+/* -----------------------------*
+     404 Page style
+*-------------------------------*/
+.fof-search-button{
+  background-color:#87ADD9;
+  color:black;
+  border-radius: 5px 5px !important;
+}
+.fof-link{
+  color:#12121280;
+  font-size:16px !important;
+}
+.fof-link:hover{
+  cursor:pointer;
+}
+.fof-link-description{
+  color:#475467;
+  line-height: 24px;
+  font-weight: 400 !important;
+}
+.fof-image{
+  width:100%;
+  max-width:500px;
+}
