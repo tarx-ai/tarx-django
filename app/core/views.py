@@ -25,3 +25,7 @@ def handler404(request, *args, **kwargs):
         request,
         "404.html",
     )
+
+
+def blog(request):
+    return render(request, "blog/blog_index.html")

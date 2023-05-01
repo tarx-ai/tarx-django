@@ -4,12 +4,12 @@
         <div class="col-md-6 col-3">
             <a class="navbar-logo d-flex align-items-center"
                href="{% url 'index' %}">
-                <img src={% static "assets/image/white-logo.svg" %} alt="white-logo" />
+                <img src={% static "assets/image/black-logo.svg" %} alt="white-logo" />
                 <span class="fw-700">Tarx</span></a>
         </div>
         <div class="col-md-6 col-9">
             <div class="d-flex justify-content-end">
-                <a class="btn login-btn fw-700 lh-24" href="{% url 'users:login' %}">Log in</a>
+                <a class="btn login-btn-dark fw-700 lh-24" href="{% url 'users:login' %}">Log in</a>
                 <a class="btn request-btn fw-700 lh-24"
                    href="{% url 'users:register' %}">Request Access</a>
             </div>

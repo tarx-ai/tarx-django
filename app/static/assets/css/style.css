@@ -82,6 +82,10 @@ ol {
   font-size: 24px;
   margin-left: 12px;
 }
+.login-btn-dark{
+  color:black;
+}
+
 .login-btn,
 .login-btn:hover
  {
@@ -435,4 +439,46 @@ ol {
 .fof-image{
   width:100%;
   max-width:500px;
+}
+/* ----------------------*
+    BLOG CSS
+*------------------------*/
+
+.blog-post-author-date{
+  color:#12121280;
+  font-weight:700;
+  font-size:14px;
+  line-height: 24px;
+}
+
+
+
+/* ----------------------*
+    Pagination style
+*------------------------*/
+
+.blog-pagination-btn{
+  color:#475467;
+  font-size:16px;
+  font-weight:700;
+}
+.blog-pagination-btn:hover{
+  opacity:.6;
+}
+
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 5px 12px;
+  text-decoration: none;
+}
+.active{
+  background-color: #F9FAFB;
+  border-radius: 5px;
+}
+
+.pagination a:hover {
+  cursor: pointer;
+  background-color: #F9FAFB;
 }

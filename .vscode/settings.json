@@ -3,11 +3,4 @@
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "python.formatting.provider": "black",
-    "[django-html]": {
-        "editor.defaultFormatter": "monosans.djlint",
-        "editor.foldingStrategy": "indentation"
-    },
-    "djlint.formatCss": true,
-    "djlint.formatJs": true,
-    "djlint.preserveBlankLines": true,
 }
