@@ -1,1 +1,77 @@
-login
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  {% include "common/head.html" %}
+  <body>
+    <!-- Start Login form section -->
+    <div class="login-page">
+      <div class="container-small">
+        <div>
+          <h3 class="form-heading-text fw-700 d-flex align-items-center justify-content-center">
+            Welcome Back
+            <img src="{% static "assets/image/icons/waving-hand.png" %}" alt="waving-hand" />
+          </h3>
+          <form>
+            <div class="mb-20">
+              <label for="" class="form-label">Email address</label>
+              <input type="email"
+                     class="form-control"
+                     id="email"
+                     placeholder="Enter your email"
+                     autocomplete="off" />
+            </div>
+            <div>
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password"
+                     class="form-control"
+                     id="password"
+                     placeholder="••••••••"
+                     autocomplete="off" />
+            </div>
+            <div class="remember-forgot">
+              <div class="form-check d-inline-block">
+                <input type="checkbox" class="form-check-input" id="remember-me" />
+                <label class="form-check-label" for="remember-me">Remember for 30 days</label>
+              </div>
+              <a href="javascript:void()" class="fw-700 float-end">Forgot password</a>
+            </div>
+            <button type="submit"
+                    class="btn w-100 common-anchor fw-700 lh-24"
+                    id="jump-back"
+                    disabled>Jump back in.</button>
+            <button class="gl-button w-100 fw-700 lh-24">
+              <img src={% static "assets/image/social-icon.svg" %} alt="social-icon" />
+              Sign in with Google
+            </button>
+            <p class="gl-text-center text-center fw-700">
+              Don’t have an account? <span>Request Access</span>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    let isEmailHaveValue = false;
+    let isPasswordHaveValue = false;
+    email.addEventListener("input", function () {
+      if (String(email.value).length !== 0) {
+        isEmailHaveValue = true;
+      } else {
+        document.getElementById("jump-back").disabled = true;
+      }
+    });
+    password.addEventListener("input", function () {
+      if (String(password.value).length !== 0) {
+        if (isEmailHaveValue) {
+          isPasswordHaveValue = true;
+          document.getElementById("jump-back").disabled = false;
+        }
+      } else {
+        document.getElementById("jump-back").disabled = true;
+      }
+    });
+  </script>
+</html>

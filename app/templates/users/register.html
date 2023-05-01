@@ -1,1 +1,165 @@
-register
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    {% include "common/head.html" %}
+    <body>
+        <div class="container-small">
+            <div class="text-center">
+                <img src="{% static "assets/image/black-logo.svg" %}"
+                     alt="black-logo"
+                     class="mb-2" />
+                <h3 class="form-heading-text fw-700 text-center">Join the waitlist</h3>
+                <p class="lead-text lh-24 mb-32">
+                    Tarx is in private beta with companies looking to unlock the full potential of AI with their data.
+                </p>
+            </div>
+            <form method='POST' onsubmit="return !! (validateUsername());">
+                {% csrf_token %}
+                <div class="mb-20">
+                    <label for="name" class="form-label">Name*</label>
+                    <input type="text"
+                           class="form-control"
+                           id="name"
+                           placeholder="Enter your name"
+                           autocomplete="off" />
+                    {{ form.errors.name }}
+                    <h6 id="usercheck"  style="color: red; display:none;">Name must not be empty.</h6>
+                </div>
+                <div class="mb-24">
+                    <label for="organization" class="form-label">Organization*</label>
+                    <input type="text"
+                           class="form-control"
+                           id="organization"
+                           placeholder="Enter your work email"
+                           autocomplete="off" />
+                    <h6 style="color: red;">{{ form.errors.organization }}</h6>
+                    <h6 id="emailcheck" style="color: red; display:none;">Email must not be empty.</h6>
+                </div>
+                <div class="mb-28">
+                    <label for="" class="form-label">What are interested in using Tarx for?</label>
+                    <div class="position-relative select-btn">
+                        <select class="form-control" aria-label="Default select example">
+                            <option selected>Connecting my data to AI</option>
+                            <option value="1">Something else...</option>
+                        </select>
+                        <img src={% static "assets/image/icons/arrow-down.svg" %} alt="arrow-down" />
+                    </div>
+                </div>
+                <div class="mb-28">
+                    <label for="" class="form-label">What use cases are you interested in Tarx</label>
+                    <textarea class="form-control"
+                              id=""
+                              rows="3"
+                              placeholder="Enter a description..."></textarea>
+                </div>
+                <div class="mb-60">
+                    <label for="" class="form-label">How many humans use your product daily?</label>
+                    <div class="position-relative select-btn">
+                        {% comment %} {{ form.humans|add_class:'form-control'}} {% endcomment %}
+                        <select class="form-control" aria-label="Default select example">
+                            <option selected>Connecting my data to AI</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <img src={% static "assets/image/icons/arrow-down.svg" %} alt="arrow-down" />
+                    </div>
+                </div>
+                <button type="submit"
+                        class="btn w-100 common-anchor fw-700 lh-24"
+                        id="request-access">Request Access</button>
+            </form>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('#id_name').removeAttr('required');
+
+        // Validate Username
+        $("#usercheck").hide();
+        let usernameError = true;
+        $("#id_name").keyup(function () {
+            validateUsername();
+        });
+
+
+
+        function validateUsername() {
+            let usernameValue = $("#id_name").val();
+            let regex = /^[a-zA-Z-/\s/g]+$/;
+            console.log("----------->",regex.test(usernameValue))
+                console.log("----------->",(usernameValue))
+                // if (regex.test(usernameValue)) {
+                    if (usernameValue.length == "") {
+                        $("#usercheck").show();
+                        usernameError = false;
+                        return false;
+                    } else if ( usernameValue.length > 20) {
+                        $("#usercheck").show();
+                        $("#usercheck").html("length of Name must be less than 20 characters");
+                        usernameError = false;
+                        return false;
+                    }
+                    else if(regex.test(usernameValue) == false) {
+                    console.log(usernameValue)
+                    $("#usercheck").show();
+                    $("#usercheck").html("Name should contain only Alphabets and WhiteSpace characters");
+                    usernameError = false;
+                    }
+
+                    else {
+                        usernameError = true;
+                        $("#usercheck").hide();
+                    }
+                // }
+
+            }
+
+        $('#id_organization').removeAttr('required');
+        $("#emailcheck").hide();
+        let emailError = true;
+        $("#id_organization").keyup(function () {
+            validateEmail();
+        });
+
+
+
+        function validateEmail() {
+            let emailValue = $("#id_organization").val();
+
+
+            // if (regex.test(emailValue)) {
+                if (emailValue.length == "") {
+                    $("#emailcheck").show();
+                    $("#emailcheck").html("Organization cannot be empty")
+                    emailError = false;
+                    return false;
+                }
+
+
+                else {
+                    emailError = true;
+                    $("#emailcheck").hide();
+                }
+            }
+            $("#request-access").click(function () {
+
+                validateUsername();
+                validateEmail();
+
+                console.log("usernameError-->",usernameError)
+                console.log("emailError-->",emailError)
+                if (
+                    usernameError == true &&
+                    emailError == true
+                ) {
+                    return true;
+                } else {
+                    return false;
+                }
+        });
+    });
+
+    </script>
+</html>

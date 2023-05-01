@@ -1,10 +1,10 @@
-{% extends 'common/base.html' %}
+{% extends "common/base.html" %}
 {% load static %}
 {% block content %}
   <!-- start banner section -->
   <div class="bg-black vh_100">
     <div class="container">
-      {% include 'common/header_dark.html' %}
+      {% include "common/header_dark.html" %}
       <div class="banner-section">
         <div class="banner-text">
           <span>Welcome to your turn-key operating system for AI.</span>
@@ -68,7 +68,6 @@
                     <img src={% static "assets/image/icons/hubspot.svg" %} alt="hubspot-logo" />
                     <span>HubSpot</span>
                   </div>
-
                   <div class="company-name">
                     <img src="{% static "assets/image/icons/postgresql.svg" %}" alt="postgresql-logo" />
                     <span>Postgresql</span>

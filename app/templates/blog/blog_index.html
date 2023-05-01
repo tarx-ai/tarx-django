@@ -4,15 +4,12 @@
   <!-- start banner section -->
   <div class="bg-white vh_100">
     <div class="container">
-        {% include "common/header_light.html" %}
-
-        {% include "blog/blog_header.html" %}
-        {% include "blog/latest_post.html" %}
-        {% include "blog/posts_list.html" %}
-        {% include "blog/pagination.html" %}
-        <div class="container py-5">
-          {% include "common/newsletter_subscription.html" %}
-        </div>
+      {% include "common/header_light.html" %}
+      {% include "blog/blog_header.html" %}
+      {% include "blog/latest_post.html" %}
+      {% include "blog/posts_list.html" %}
+      {% include "blog/pagination.html" %}
+      <div class="container py-5">{% include "common/newsletter_subscription.html" %}</div>
     </div>
   </div>
 {% endblock content %}
