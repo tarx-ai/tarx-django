@@ -10,7 +10,9 @@
         {% include "blog/latest_post.html" %}
         {% include "blog/posts_list.html" %}
         {% include "blog/pagination.html" %}
-
+        <div class="container py-5">
+          {% include "common/newsletter_subscription.html" %}
+        </div>
     </div>
   </div>
 {% endblock content %}

@@ -1,1 +1,313 @@
-privacy_policy
+{% extends 'common/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="bg-black">
+      <div class="container">
+        <header class="header-wrap">
+          <div class="row align-items-center">
+            <div class="col-md-6 col-3">
+              <a class="navbar-logo d-flex align-items-center" href="{% url 'index' %}">
+                <img src="{% static 'assets/image/white-logo.svg' %}" alt="white-logo" />
+                <span class="fw-700">Tarx</span></a
+              >
+            </div>
+            <div class="col-md-6 col-9">
+              <form class="d-flex justify-content-end">
+                <a class="btn login-btn fw-700 lh-24" href="{% url 'users:login' %}">Log in</a>
+                <a class="btn request-btn fw-700 lh-24" href="{% url 'users:register' %}" type="submit">
+                  Request Access
+                </a>
+              </form>
+            </div>
+          </div>
+        </header>
+        <div class="py-96">
+          <div class="cookie-banner text-center">
+            <span class="d-block fw-700 lh-24">Current as of 20 Jan 2022</span>
+            <h2 class="fw-700 mb-0">Privacy Policy</h2>
+            <h5 class="">
+            Tarx.ai takes your privacy seriously. Please read this Privacy Policy to learn how we treat your personal data. By using or accessing our Services in any manner, you acknowledge that you accept the practices and policies outlined below, and you hereby consent that we will collect, use and share your information as described in this Privacy Policy.
+            </h5>
+            <ul
+              class="nav nav-pills justify-content-center"
+              id="pills-tab"
+              role="tablist"
+            >
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="pills-home-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-home"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-home"
+                  aria-selected="true"
+                >
+                  Legal version
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link d-sm-block d-none"
+                  id="pills-profile-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-profile"
+                  aria-selected="false"
+                >
+                  Simple version (from Tarx)
+                </button>
+                <button
+                  class="nav-link d-sm-none d-block"
+                  id="pills-profile-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-profile"
+                  aria-selected="false"
+                >
+                  Simple version
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- start cookie policy section -->
+
+    <div class="container-md">
+      <div class="py-96">
+        <div class="cookie-text mb-40">
+          <p>
+            Remember that your use of Tarx’s Services is at all times subject to our Terms of Use, which incorporates this Privacy Policy. Any terms we use in this Policy without defining them have the definitions given to them in the Terms of Use. If you have a disability, you may access this Privacy Policy in an alternative format by contacting info@tarx.com
+          </p>
+          <!-- <p>
+            Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat
+            mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu
+            quis fusce augue enim. Quis at habitant diam at. Suscipit tristique
+            risus, at donec. In turpis vel et quam imperdiet. Ipsum molestie
+            aliquet sodales id est ac volutpat.
+          </p> -->
+        </div>
+
+        <div class="cookie-text mb-40">
+          <h3 class="fs-30 fw-700">WHAT THIS PRIVACY POLICY COVERS</h3>
+          <p>
+            This Privacy Policy covers how we treat Personal Data that we gather when you access or use our Services. “Personal Data” means any information that identifies or relates to a particular individual and also includes information referred to as “personally identifiable information” or “personal information” under applicable data privacy laws, rules or regulations. This Privacy Policy does not cover the practices of companies we don’t own or control or people we don’t manage.
+          </p>
+          <h3 class="fs-30 fw-700">PERSONAL DATA</h3>
+          <h3 class="fw-700">Categories of Personal Data We Collect</h3>
+          <p>
+            Profile or Contact Data, Device/IP Data, Web Analytics, Consumer Demographic Data, Other Identifying Information that You Voluntarily Choose to Provide
+          </p>
+          <h3 class="fw-700">Categories of Sources of Personal Data</h3>
+          <p>
+            We collect Personal Data about you from the following categories of sources:
+          </p>
+          <ol>
+            <ul><h3 class="fw-700"> &#9724 You</ul>
+              <ol>
+                <h4 class="fw-700 pad-left"> &#9679 When you provide such information directly to us. </h4>
+              </ol>
+              <li class="pad-left">
+                When you use our interactive tools and Services.
+              </li>
+              <li class="pad-left">
+                When you voluntarily provide information in free-form text boxes through the Services or through responses to surveys or questionnaires.
+              </li>
+              <li class="pad-left">
+                When you send us an email or otherwise contact us.
+              </li>
+              <ol>
+                <h3 class="fw-700 pad-left"> &#9679 When you use the Services and such information is collected automatically.  </h3>
+              </ol>
+              <li class="pad-left" >
+                Through Cookies (defined in the “Tracking Tools, Advertising and Opt-Out” section below).
+              </li><li class="pad-left">
+                If you use a location-enabled browser, we may receive information about your location.
+              </li><li class="pad-left">
+                If you download and install certain applications and software we make available, we may receive and collect information transmitted from your computing device for the purpose of providing you the relevant Services.
+              </li>
+              <h3 class="fw-700"> &#9724 Third Parties </h3>
+              <ol>
+                <h3 class="fw-700 pad-left"> &#9679 Vendors</h3>
+              </ol>
+              <li class="pad-left">
+                We may use analytics providers to analyze how you interact and engage with the Services, or third parties may help us provide you with customer support.
+              </li>
+            </h3>
+            </ol>
+        </div>
+
+        <div class="cookie-text mb-32">
+          <ol>
+          <h3 class="fs-30 fw-700">Our Commercial or Business Purposes for Collecting Personal Data</h3>
+          <li class="pad-left">Providing, Customizing and Improving the Services</li>
+          <li class="pad-left">Providing you with the products, services or information you request.</li>
+          <li class="pad-left">Meeting or fulfilling the reason you provided the information to us.</li>
+          <li class="pad-left">Providing support and assistance for the Services.</li>
+          <li class="pad-left">Improving the Services, including testing, research, internal analytics and product development.</li>
+          <li class="pad-left">Personalizing the Services, website content and communications based on your preferences.</li>
+          <li class="pad-left">Doing fraud protection, security and debugging.</li>
+          <li class="pad-left">Carrying out other business purposes stated when collecting your Personal Data or as otherwise set forth in applicable data privacy laws, such as the California Consumer Privacy Act (the “CCPA”).</li>
+          <li class="pad-left">Marketing the Services </li>
+          <ul>
+            <li class="pad-left-50">Marketing and selling the Services.</li>
+            <li class="pad-left-50">Showing you advertisements, including interest-based or online behavioral advertising.</li>
+          </ul>
+
+          <li class="pad-left">Corresponding with You </li>
+          <ul>
+            <li class="pad-left-50">1. Responding to correspondence that we receive from you, contacting you when necessary or requested, and sending you information about Tarx or the Services.</li>
+            <li class="pad-left-50">2. Sending emails and other communications according to your preferences or that display content that we think will interest you.</li>
+          </ul>
+
+          <li class="pad-left">Meeting Legal Requirements and Enforcing Legal Terms </li>
+          <p class="pad-left-50">1. Fulfilling our legal obligations under applicable law, regulation, court order, or another legal process, such as preventing, detecting, and investigating security incidents and potentially illegal or prohibited activities.</p>
+          <p class="pad-left-50">2. Protecting the rights, property, or safety of you, Tarx, or another party.</p>
+          <p class="pad-left-50">3. Enforcing any agreements with you.</p>
+          <p class="pad-left-50">4. Responding to claims that any posting or other content violates third-party rights.</p>
+          <p class="pad-left-50">5. Resolving disputes..</p>
+          <li class="pad-left">We will not collect additional categories of Personal Data or use the Personal Data we collected for materially different, unrelated, or incompatible purposes without providing you notice.</li>
+          </ol>
+        </div>
+
+        <div class="cookie-text mb-32">
+          <h3 class="fw-700">
+            HOW WE SHARE YOUR PERSONAL DATA
+          </h3>
+          <p>
+            We disclose your Personal Data to the categories of service providers and other parties listed in this section. Depending on state laws that may be applicable to you, some of these disclosures may constitute a “sale” of your Personal Data. For more information, please refer to the state-specific sections below.
+          </p>
+        </div>
+        <div>
+          <h3 class="fw-700">Service Providers. These parties help us provide the Services or perform business functions on our behalf. They include: </h3>
+          <p class="pad-left">&#9642 Hosting, technology and communication providers.</p>
+          <p class="pad-left">&#9642 Security and fraud prevention consultants.</p>
+          <p class="pad-left">&#9642 Support and customer service vendors.</p>
+          <p class="pad-left">&#9642 Product fulfillment and delivery providers.</p>
+          <h3 class="fw-700">Analytics Partners. These parties provide analytics on web traffic or usage of the Services. They include:  </h3>
+          <p class="pad-left">&#9642 Companies that track how users found or were referred to the Services.</p>
+          <p class="pad-left">&#9642 Companies that track how users interact with the Services.</p>
+          <h3 class="fw-700">Business Partners. These parties partner with us in offering various services. They include:   </h3>
+          <p class="pad-left">&#9642 Businesses that you have a relationship with..</p>
+          <p class="pad-left">&#9642 Companies that we partner with to offer joint promotional offers or opportunities.</p>
+          <h3 class="fw-700">Parties You Authorize, Access or Authenticate</h3>
+          <p class="pad-left">&#9642 Businesses that you have a relationship with..</p>
+          <p class="pad-left">&#9642 Companies that we partner with to offer joint promotional offers or opportunities.</p>
+        </div>
+
+        <div class="cookie-text mb-40">
+          <h3 class="fw-700">How do we keep your information safe?</h3>
+          <p>
+            Pharetra morbi libero id aliquam elit massa integer tellus. Quis
+            felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit
+            dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac
+            pellentesque ac.
+          </p>
+        </div>
+
+        <div class="cookie-text mb-32">
+          <h3 class="fs-30 fw-700">What are your privacy rights?</h3>
+          <p>
+            Pharetra morbi libero id aliquam elit massa integer tellus. Quis
+            felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit
+            dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac
+            pellentesque ac.
+          </p>
+        </div>
+
+        <div class="cookie-text mb-32">
+          <h3 class="fw-700">How can you contact us about this policy?</h3>
+          <p>
+            Sagittis et eu at elementum, quis in. Proin praesent volutpat
+            egestas sociis sit lorem nunc nunc sit. Eget diam curabitur mi ac.
+            Auctor rutrum lacus malesuada massa ornare et. Vulputate consectetur
+            ac ultrices at diam dui eget fringilla tincidunt. Arcu sit dignissim
+            massa erat cursus vulputate gravida id. Sed quis auctor vulputate
+            hac elementum gravida cursus dis.
+          </p>
+          <ol>
+            <li>Lectus id duis vitae porttitor enim gravida morbi.</li>
+            <li>
+              Eu turpis posuere semper feugiat volutpat elit, ultrices
+              suspendisse. Auctor vel in vitae placerat.
+            </li>
+            <li>
+              Suspendisse maecenas ac donec scelerisque diam sed est duis purus.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- start footer section -->
+    <footer>
+      <div class="container">
+        <div class="footer-top border-top">
+          <div class="row align-items-center">
+            <div class="col-md-5">
+              <a href="www.tarx.com" class="footer-logo">
+                <img src="{% static 'assets/image/black-logo.svg' %}" alt="black-logo" />
+                <span class="fw-700">Tarx.com</span>
+              </a>
+              <a href="mailto:howdy@tarx.com" class="footer-mail d-block lh-24"
+                >mailto:howdy@tarx.com</a
+              >
+            </div>
+            <div class="col-md-7">
+              <div class="widget">
+                <p class="widget-text fw-700 lh-24">
+                  AI, huh? Join 2,300+ subscribers who want to learn what we’re
+                  learn while we learn it.
+                </p>
+                <div class="d-flex email-box">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id=""
+                    placeholder="Enter your email"
+                  />
+                  <button
+                    class="btn request-btn fw-700 lh-24 subscribe-btn"
+                    type="submit"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="footer-line m-0" />
+        <div class="footer-bottom">
+          <div class="row">
+            <div class="col-md-6 order-1 order-md-0">
+              <p class="mb-0 lh-24">
+                © 2022-2023 TARX INC. All rights reserved.
+              </p>
+            </div>
+            <div class="col-md-6 order-0 order-md-1">
+              <ul class="widget-link text-md-end">
+                <li>
+                  <a href="{% url 'terms' %}" class="lh-24">Terms of Use</a>
+                </li>
+                <li>
+                  <a href="{% url 'privacy_policy' %}" class="lh-24 mx-3">Privacy</a>
+                </li>
+                {% comment %} <li>
+                  <a href="{% url 'user:cookies' %}" class="lh-24">Cookies</a>
+                </li> {% endcomment %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    {% endblock content %}

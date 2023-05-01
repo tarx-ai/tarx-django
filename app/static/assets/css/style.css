@@ -482,3 +482,9 @@ ol {
   cursor: pointer;
   background-color: #F9FAFB;
 }
+
+.blog-post-social-icon{
+  border: 1px solid #D0D5DD;
+  border-radius: 5px;
+  padding:5px 10px;
+}

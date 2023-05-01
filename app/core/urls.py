@@ -12,7 +12,9 @@ urlpatterns = [
     path("terms", views.terms, name="terms"),
     path("privacy-policy", views.privacy_policy, name="privacy_policy"),
     path("404", views.page_404, name="page_not_found"),
+    # blog
     path("blog", views.blog, name="blog"),
+    path("blog/<int:post_id>", views.blog_details, name="blog_post_details"),
     # apps urls
     path("", include("users.urls", namespace="users")),
 ]
