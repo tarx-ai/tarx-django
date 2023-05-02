@@ -212,6 +212,20 @@ ol {
   font-size: 16px;
 }
 
+.footer-navigation-link{
+  padding:10px;
+
+  color:#475467;
+  font-weight: 700;
+  font-size:16px;
+}
+
+.footer-navigation-link:hover{
+  cursor:pointer;
+  opacity: 0.7;
+  transition: .5;
+}
+
 /* ----------------------*
     LOGIN FORM CSS
 *------------------------*/
@@ -436,10 +450,7 @@ ol {
   line-height: 24px;
   font-weight: 400 !important;
 }
-.fof-image{
-  width:100%;
-  max-width:500px;
-}
+
 /* ----------------------*
     BLOG CSS
 *------------------------*/
@@ -487,4 +498,26 @@ ol {
   border: 1px solid #D0D5DD;
   border-radius: 5px;
   padding:5px 10px;
+}
+
+
+
+/* ----------------------*
+    CAREERS CSS
+*------------------------*/
+
+.careers-social-icons{
+  color:#98A2B3;
+}
+
+.careers-position-container{
+  border:0.5px solid #EAECF0;
+  border-radius: 10px;
+  padding:25px;
+}
+
+
+.img-max{
+  max-width: 400px;
+  width:100%;
 }

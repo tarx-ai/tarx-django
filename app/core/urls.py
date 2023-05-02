@@ -16,6 +16,8 @@ urlpatterns = [
     # blog
     path("blog", views.blog, name="blog"),
     path("blog/<int:post_id>", views.blog_details, name="blog_post_details"),
+    # careers
+    path("careers", views.careers, name="careers"),
     # apps urls
     path("", include("users.urls", namespace="users")),
 ]

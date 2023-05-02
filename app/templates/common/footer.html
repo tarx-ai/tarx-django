@@ -8,7 +8,14 @@
                         <img src="{% static 'assets/image/black-logo.svg' %}" alt="black-logo" />
                         <span class="fw-700">Tarx.com</span>
                     </a>
-                    <a href="mailto:howdy@tarx.com" class="footer-mail d-block lh-24">mailto:howdy@tarx.com</a>
+                    {% comment %} <a href="mailto:howdy@tarx.com" class="footer-mail d-block lh-24">mailto:howdy@tarx.com</a> {% endcomment %}
+                    <div class="d-flex flex-row justify-content-between align-items-center flex-wrap">
+                        <a href="#" class="footer-navigation-link">Contact</a>
+                        <a href="#" class="footer-navigation-link ">Legal</a>
+                        <a href="{% url 'careers' %}" class="footer-navigation-link">Careers</a>
+                        <a href="#" class="footer-navigation-link">Help</a>
+                        <a href="#" class="footer-navigation-link">AI Governance</a>
+                    </div>
                 </div>
                 <div class="col-md-7">
                     <div class="widget">

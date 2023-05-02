@@ -1,0 +1,16 @@
+{% extends "common/base.html" %}
+{% load static %}
+{% block content %}
+    <!-- start banner section -->
+    <div class="bg-white vh_100">
+        <div class="container">
+            {% include "common/header_light.html" %}
+            {% include "careers/careers_header.html" %}
+            {% include "careers/careers_our_team.html" %}
+            {% include "careers/careers_location.html" %}
+            {% include "careers/careers_list.html" %}
+            {% include "careers/careers_map.html" %}
+            {% include "careers/careers_review.html" %}
+        </div>
+    </div>
+{% endblock content %}
