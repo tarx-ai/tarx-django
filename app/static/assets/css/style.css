@@ -170,9 +170,11 @@ ol {
     FOOTER CSS STYLE
 *-------------------------*/
 
-.footer-top {
-  padding: 64px 0px;
+.footer{
+  padding:2% 1%;
+  background-color:#F9FAFB;
 }
+
 .footer-logo span {
   font-size: 24px;
   line-height: 90px;
@@ -214,7 +216,6 @@ ol {
 
 .footer-navigation-link{
   padding:10px;
-
   color:#475467;
   font-weight: 700;
   font-size:16px;
