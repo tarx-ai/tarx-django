@@ -55,11 +55,38 @@ ol {
   border-color: #d0d5dd;
 }
 .color-primary-black{
-  color:#12121280
+  color:#12121280;
+}
+
+.color-gray-600{
+  color:#475467;
+}
+.color-gray-900{
+  color:#101828;
 }
 
 .fw-bold{
   font-weight: bold;
+}
+
+.fs-36{
+  font-size:36px;
+}
+
+.fs-20{
+  font-size:20px;
+}
+
+.lh-44{
+  line-height:44px;
+}
+
+.lh-30{
+  line-height:30px;
+}
+
+.lh-24{
+  line-height:24px;
 }
 /* -----------------------*
      BANNER CSS STYLE

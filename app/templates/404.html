@@ -1,43 +1,59 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    {% include "common/head.html" %}
-    <body>
-        <div class="container-fluid">
-            <div style="margin-top: 10%">
-                <div class="d-flex flex-row justify-content-center align-items-center flex-wrap">
-                    <!-- Form Left SIDE -->
-                    <div class="d-flex flex-column justify-content-start mx-5">
-                        <p class="color-primary-black">404 error</p>
-                        <h1 class="fw-bold mx-3">You broke us.</h1>
-                        <p style="color: #475467">Sorry, the page you are looking for doesn't exist.</p>
-                        <div class="row my-3 px-3">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" />
-                                <button class="mx-3 btn fof-search-button" disabled>Search</button>
-                            </div>
-                        </div>
-                        <!-- list -->
-                        <div class="d-flex flex-column">
-                            <div class="my-1 mx-3">
-                                <a href="#" class="fof-link">Visit Documentation &#8594;</a>
-                                <p class="fof-link-description">Dive in to learn all about our product.</p>
-                            </div>
-                            <div class="my-1 mx-3">
-                                <a href="#" class="fof-link">Go do some reading on our blog &#8594;</a>
-                                <p class="fof-link-description">Read the latest posts on our blog.</p>
-                            </div>
-                            <div class="my-1 mx-3">
-                                <a href="#" class="fof-link">Reach out to support &#8594;</a>
-                                <p class="fof-link-description">Our friendly team is here to help.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Image RIGHT SIDE -->
-                    <img class="img-max"
-                         src="{% static 'assets/image/404_robots_failing.png' %}" />
-                </div>
+  {% include "common/head.html" %}
+  <body>
+    <div class="container-fluid">
+      <div style="margin-top: 10%">
+        <div
+          class="d-flex flex-row justify-content-center align-items-center flex-wrap"
+        >
+          <!-- Form Left SIDE -->
+          <div class="d-flex flex-column justify-content-start mx-5">
+            <p class="color-primary-black">404 error</p>
+            <h1 class="fw-bold mx-3">You broke us.</h1>
+            <p class="color-gray-600">
+              Sorry, the page you are looking for doesn't exist.
+            </p>
+            <div class="row my-3 px-3">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" />
+                <button class="mx-3 btn fof-search-button" disabled>
+                  Search
+                </button>
+              </div>
             </div>
+            <!-- list -->
+            <div class="d-flex flex-column">
+              <div class="my-1 mx-3">
+                <a href="#" class="fof-link">Visit Documentation &#8594;</a>
+                <p class="fof-link-description">
+                  Dive in to learn all about our product.
+                </p>
+              </div>
+              <div class="my-1 mx-3">
+                <a href="#" class="fof-link"
+                  >Go do some reading on our blog &#8594;</a
+                >
+                <p class="fof-link-description">
+                  Read the latest posts on our blog.
+                </p>
+              </div>
+              <div class="my-1 mx-3">
+                <a href="#" class="fof-link">Reach out to support &#8594;</a>
+                <p class="fof-link-description">
+                  Our friendly team is here to help.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Image RIGHT SIDE -->
+          <img
+            class="img-max"
+            src="{% static 'assets/image/404_robots_failing.png' %}"
+          />
         </div>
-    </body>
+      </div>
+    </div>
+  </body>
 </html>
