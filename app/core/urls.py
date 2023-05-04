@@ -18,6 +18,8 @@ urlpatterns = [
     path("blog/<int:post_id>", views.blog_details, name="blog_post_details"),
     # careers
     path("careers", views.careers, name="careers"),
+    # contact
+    path("contact", views.contact, name="contact"),
     # apps urls
     path("", include("users.urls", namespace="users")),
 ]

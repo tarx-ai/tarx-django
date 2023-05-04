@@ -37,3 +37,7 @@ def blog_details(request, post_id):
 
 def careers(request):
     return render(request, "careers/careers_index.html")
+
+
+def contact(request):
+    return render(request, "contact/contact_index.html")
