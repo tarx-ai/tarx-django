@@ -9,8 +9,8 @@
             </p>
         </div>
         <!-- list -->
-        <div class="d-flex flex-row justify-content-between">
-            <div class="d-flex flex-wrap  flex-column">
+        <div class="d-flex flex-row justify-content-around">
+            <div class="d-flex flex-wrap flex-column">
                 <!-- card 1-->
                 <div class="d-flex flex-wrap flex-column justify-content-start w-75 mb-5">
                     <div class="d-flex flex-row justify-content-between">
@@ -64,7 +64,9 @@
                 </div>
             </div>
             <!-- image right side TODO media-->
-            <img alt="debit_cards" src="{% static "assets/image/home/home_cards.png" %}">
+            <div class="d-flex flex-row align-items-center">
+                <img class="img-load" alt="debit_cards" src="{% static "assets/image/home/home_cards.png" %}">
+            </div>
         </div>
     </div>
 </div>
