@@ -1,6 +1,6 @@
 #!/bin/bash
 cd app
-
+sleep 5
 echo Running migrations
 python manage.py migrate --noinput
 
