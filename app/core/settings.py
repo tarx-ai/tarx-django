@@ -74,10 +74,10 @@ if os.getenv("ENV") == "production":
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "NAME": os.getenv("DATABASE_NAME"),
-            "USER": os.getenv("DATABASE_USERNAME"),
-            "PASSWORD": os.getenv("DATABASE_PASSWORD"),
-            "HOST": "localhost",
+            "NAME": os.getenv("DATABASE_NAME", "db"),
+            "USER": os.getenv("DATABASE_USERNAME", "postgres"),
+            "PASSWORD": os.getenv("DATABASE_PASSWORD", "password"),
+            "HOST": os.getenv("DATABASE_NAME", "db"),
             "PORT": os.getenv("DB_PORT", "5432"),
         },
     }
