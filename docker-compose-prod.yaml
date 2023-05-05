@@ -29,5 +29,10 @@ services:
     depends_on:
       - db
 
+networks:
+  network:
+    driver: bridge
+    name: fmc_network
+
 volumes:
   db_data:
