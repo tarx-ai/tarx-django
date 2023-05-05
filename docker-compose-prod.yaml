@@ -15,8 +15,6 @@ services:
     ports:
       - 127.0.0.1:${DATABASE_LOCAL_PORT:-5432}:5432
     restart: always
-    networks:
-      - network
 
   app:
     build: .
@@ -30,13 +28,8 @@ services:
       - .env
     depends_on:
       - db
-    networks:
-      - network
-
-networks:
-  network:
-    driver: bridge
-    name: tarx_cms_network
+    links:
+      - db
 
 volumes:
   db_data:
