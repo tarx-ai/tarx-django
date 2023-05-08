@@ -60,7 +60,6 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
-          username: pragnakalp
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/staging
