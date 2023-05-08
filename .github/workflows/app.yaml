@@ -35,6 +35,7 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --statistics
       - name: Run tests
         run: |
+          cd app
           pytest
 
   build:
