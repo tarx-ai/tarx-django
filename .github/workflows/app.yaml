@@ -51,3 +51,21 @@ jobs:
         with:
           push: true
           tags: tarxismagic/tarx-cms:staging
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: pragnakalp
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/staging
+            cd tarx_staging_
+            dcdn
+            dco pull
+            dcup -d --force-recreate
+            docker image prune
