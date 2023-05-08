@@ -66,7 +66,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd tarx_staging_
-            dcdn
-            dco pull
-            dcup -d --force-recreate
-            docker image prune
+            docker compose down
+            docker compose pull
+            docker compose up -d --force-recreate
+            docker image prune -f
