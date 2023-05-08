@@ -16,5 +16,7 @@
   },
   "beautify.language": {
     "html": ["htm", "html", "django-html"]
-  }
+  },
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
 }

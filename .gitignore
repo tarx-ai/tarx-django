@@ -121,7 +121,7 @@ celerybeat.pid
 
 # Environments
 .env
-*.env
+prod.env
 .venv
 env/
 venv/
@@ -176,3 +176,4 @@ cython_debug/
 static/*
 media/*
 dump
+staticfiles

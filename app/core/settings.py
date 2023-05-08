@@ -82,7 +82,7 @@ if os.getenv("ENV") == "production":
             "PORT": os.getenv("DB_PORT", "5432"),
         },
     }
-if os.getenv("ENV") == "local":
+else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
@@ -140,3 +140,26 @@ INTERNAL_IPS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 SESSION_COOKIE_AGE = 30 * 24 * 60 * 60  # 30 days
+
+
+AUTH_USER_MODEL = "users.User"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {"verbose": {"format": "[%(levelname)s] [%(asctime)s] %(message)s"}},
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        }
+    },
+    "loggers": {
+        # Silence stuff we don't care about
+        "django.db.backends": {"level": "ERROR"},
+        "PIL": {"level": "ERROR"},
+        # Everything else DEBUG and up goes to the console
+        "": {"handlers": ["console"], "level": "DEBUG"},
+    },
+}
