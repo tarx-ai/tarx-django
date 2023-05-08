@@ -7,7 +7,7 @@ on:
     branches: [staging]
 
 jobs:
-  test:
+  tests:
     strategy:
       fail-fast: false
       matrix:
@@ -35,10 +35,10 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --statistics
       - name: Run tests
         run: |
-          pytests
+          pytest
 
   build:
-    needs: flake8
+    needs: tests
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
