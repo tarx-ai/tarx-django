@@ -41,3 +41,7 @@ def careers(request):
 
 def contact(request):
     return render(request, "contact/contact_index.html")
+
+
+def pricing(request):
+    return render(request, "pricing/pricing_index.html")
