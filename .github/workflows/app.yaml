@@ -7,7 +7,7 @@ on:
     branches: [staging]
 
 jobs:
-  flake8:
+  lint and test:
     strategy:
       fail-fast: false
       matrix:
@@ -33,6 +33,9 @@ jobs:
         run: |
           flake8 . --count --show-source --statistics
           flake8 . --count --exit-zero --max-complexity=10 --statistics
+      - name: Run tests
+        run: |
+          pytests
 
   build:
     needs: flake8
