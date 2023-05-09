@@ -175,7 +175,12 @@ ol {
 .login-btn-dark{
   color:black;
 }
-
+.login-btn-white{
+  color:white;
+}
+.login-btn-white:hover{
+  color:white;
+}
 .login-btn,
 .login-btn:hover
  {

@@ -9,10 +9,14 @@
         </div>
         <div class="col-md-6 col-9">
             <div class="d-flex justify-content-end">
-                <a class="btn login-btn-dark fw-700 lh-24"
-                   href="{% url 'users:login' %}">Log in</a>
-                <a class="btn request-btn fw-700 lh-24"
-                   href="{% url 'users:register' %}">Request Access</a>
+                {% if not user.is_authenticated %}
+                    <a class="btn login-btn-dark fw-700 lh-24"
+                       href="{% url 'users:login' %}">Log in</a>
+                    <a class="btn request-btn fw-700 lh-24"
+                       href="{% url 'users:register' %}">Request Access</a>
+                {% else %}
+                    <a class="btn request-btn fw-700 lh-24" href="{% url 'logout' %}">Logout</a>
+                {% endif %}
             </div>
         </div>
     </div>

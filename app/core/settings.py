@@ -140,7 +140,7 @@ INTERNAL_IPS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 SESSION_COOKIE_AGE = 30 * 24 * 60 * 60  # 30 days
-
+LOGIN_REDIRECT_URL = "/index/"
 
 AUTH_USER_MODEL = "users.User"
 

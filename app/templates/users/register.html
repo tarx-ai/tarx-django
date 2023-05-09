@@ -11,7 +11,7 @@
                     Tarx is in private beta with companies looking to unlock the full potential of AI with their data.
                 </p>
             </div>
-            <form method='POST' action={{ request.path }}>
+            <form method="post" action={{ request.path }}>
                 {% csrf_token %}
                 <div class="mb-20">
                     <label for="name" class="form-label">Name*</label>
@@ -92,77 +92,77 @@
             let usernameValue = $("#id_name").val();
             let regex = /^[a-zA-Z-/\s/g]+$/;
             console.log("----------->",regex.test(usernameValue))
-                                                                        console.log("----------->",(usernameValue))
-                                                                        // if (regex.test(usernameValue)) {
-                                                                            if (usernameValue.length == "") {
+                                                                            console.log("----------->",(usernameValue))
+                                                                            // if (regex.test(usernameValue)) {
+                                                                                if (usernameValue.length == "") {
+                                                                                    $("#usercheck").show();
+                                                                                    usernameError = false;
+                                                                                    return false;
+                                                                                } else if ( usernameValue.length > 20) {
+                                                                                    $("#usercheck").show();
+                                                                                    $("#usercheck").html("length of Name must be less than 20 characters");
+                                                                                    usernameError = false;
+                                                                                    return false;
+                                                                                }
+                                                                                else if(regex.test(usernameValue) == false) {
+                                                                                console.log(usernameValue)
                                                                                 $("#usercheck").show();
+                                                                                $("#usercheck").html("Name should contain only Alphabets and WhiteSpace characters");
                                                                                 usernameError = false;
-                                                                                return false;
-                                                                            } else if ( usernameValue.length > 20) {
-                                                                                $("#usercheck").show();
-                                                                                $("#usercheck").html("length of Name must be less than 20 characters");
-                                                                                usernameError = false;
+                                                                                }
+
+                                                                                else {
+                                                                                    usernameError = true;
+                                                                                    $("#usercheck").hide();
+                                                                                }
+                                                                            // }
+
+                                                                        }
+
+                                                                    $('#id_organization').removeAttr('required');
+                                                                    $("#emailcheck").hide();
+                                                                    let emailError = true;
+                                                                    $("#id_organization").keyup(function () {
+                                                                        validateEmail();
+                                                                    });
+
+
+
+                                                                    function validateEmail() {
+                                                                        let emailValue = $("#id_organization").val();
+
+
+                                                                        // if (regex.test(emailValue)) {
+                                                                            if (emailValue.length == "") {
+                                                                                $("#emailcheck").show();
+                                                                                $("#emailcheck").html("Organization cannot be empty")
+                                                                                emailError = false;
                                                                                 return false;
                                                                             }
-                                                                            else if(regex.test(usernameValue) == false) {
-                                                                            console.log(usernameValue)
-                                                                            $("#usercheck").show();
-                                                                            $("#usercheck").html("Name should contain only Alphabets and WhiteSpace characters");
-                                                                            usernameError = false;
-                                                                            }
+
 
                                                                             else {
-                                                                                usernameError = true;
-                                                                                $("#usercheck").hide();
+                                                                                emailError = true;
+                                                                                $("#emailcheck").hide();
                                                                             }
-                                                                        // }
+                                                                        }
+                                                                        $("#request-access").click(function () {
 
-                                                                    }
+                                                                            validateUsername();
+                                                                            validateEmail();
 
-                                                                $('#id_organization').removeAttr('required');
-                                                                $("#emailcheck").hide();
-                                                                let emailError = true;
-                                                                $("#id_organization").keyup(function () {
-                                                                    validateEmail();
+                                                                            console.log("usernameError-->",usernameError)
+                                                                            console.log("emailError-->",emailError)
+                                                                            if (
+                                                                                usernameError == true &&
+                                                                                emailError == true
+                                                                            ) {
+                                                                                return true;
+                                                                            } else {
+                                                                                return false;
+                                                                            }
+                                                                    });
                                                                 });
-
-
-
-                                                                function validateEmail() {
-                                                                    let emailValue = $("#id_organization").val();
-
-
-                                                                    // if (regex.test(emailValue)) {
-                                                                        if (emailValue.length == "") {
-                                                                            $("#emailcheck").show();
-                                                                            $("#emailcheck").html("Organization cannot be empty")
-                                                                            emailError = false;
-                                                                            return false;
-                                                                        }
-
-
-                                                                        else {
-                                                                            emailError = true;
-                                                                            $("#emailcheck").hide();
-                                                                        }
-                                                                    }
-                                                                    $("#request-access").click(function () {
-
-                                                                        validateUsername();
-                                                                        validateEmail();
-
-                                                                        console.log("usernameError-->",usernameError)
-                                                                        console.log("emailError-->",emailError)
-                                                                        if (
-                                                                            usernameError == true &&
-                                                                            emailError == true
-                                                                        ) {
-                                                                            return true;
-                                                                        } else {
-                                                                            return false;
-                                                                        }
-                                                                });
-                                                            });
 
     </script>
 </html>
