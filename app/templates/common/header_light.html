@@ -15,6 +15,7 @@
                     <a class="btn request-btn fw-700 lh-24"
                        href="{% url 'users:register' %}">Request Access</a>
                 {% else %}
+                    <a class="btn login-btn-white fw-700 lh-24" href="{% url 'pricing' %}">Pricing</a>
                     <a class="btn request-btn fw-700 lh-24" href="{% url 'logout' %}">Logout</a>
                 {% endif %}
             </div>

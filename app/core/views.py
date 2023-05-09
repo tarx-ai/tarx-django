@@ -51,3 +51,7 @@ def contact(request):
 
 def pricing(request):
     return render(request, "pricing/pricing_index.html")
+
+
+def industry(request):
+    return render(request, "industry/industry_index.html")
