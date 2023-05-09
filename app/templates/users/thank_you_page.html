@@ -1,0 +1,16 @@
+{% extends "common/base.html" %}
+{% load static %}
+{% block content %}
+    <!-- start banner section -->
+    <div class="bg-white vh_100">
+        <div class="container">
+            {% include "common/header_light.html" %}
+            <div style="margin:10%"
+                 class="d-flex flex-column justfiy-content-center align-items-center">
+                <h1>Tarx thanks you.</h1>
+                <p class="color-gray-600 fw-400">Our team will review your use case and circle back within 24 hours.</p>
+                Can’t wait?- Mail to: <a href="mailto:howdy@tarx.com" class="btn rounded text-decoration-none">howdy@tarx.com</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

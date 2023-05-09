@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import User
+from .models import User, Application
 
 
 class UserAdmin(UserAdmin):
@@ -52,4 +52,23 @@ class UserAdmin(UserAdmin):
     ordering = ("email",)
 
 
+class ApplicationAdmin(admin.ModelAdmin):
+    model = Application
+    list_display = (
+        "name",
+        "organization",
+        "interest",
+        "use_case",
+        "humans_daily",
+        "created_at",
+    )
+    list_filter = (
+        "name",
+        "created_at",
+    )
+    search_fields = ("name", "organization")
+    ordering = ("created_at",)
+
+
 admin.site.register(User, UserAdmin)
+admin.site.register(Application, ApplicationAdmin)
