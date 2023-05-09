@@ -1,8 +1,7 @@
 from django.db import Error
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
-from django.contrib.auth import authenticate
-from django.contrib import messages
+
 
 from .models import Application
 from core.logger import logger
@@ -12,9 +11,6 @@ from core.logger import logger
 @csrf_protect
 def login(request):
     if request.method == "POST":
-        user = authenticate(
-            email=request.POST.get("email"), password=request.POST.get("password")
-        )
         ...
     return render(request, "users/login.html")
 
