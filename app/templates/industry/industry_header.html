@@ -1,0 +1,38 @@
+{% load static %}
+<div class="container">
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+        <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="fs-14 my-3 py-3">
+                <h6>
+                    <span class="badge badge-primary bg-white br-20 color-primary-black fs-14">What`s new?</span>
+                </h6>
+                <p class="fs-14 px-3">Instantly issue virtual cards</p>
+                <h1 class="fs-60 fw-400 color-primary-gray-900 my-md-5">Tarx 4 Fintech</h1>
+                <p class="fs-20 lh-30">
+                    Maximize Revenue, Boost Profitability, and Enhance Shareholder Value through the Integration of Generative and Extractive AI, Optimized by Proprietary Data for Targeted Industry Applications
+                </p>
+            </div>
+            <div class="mx-auto">
+                <a class="btn bg-white fs-18 fw-700 p-3 border"><i class="fa-regular fa-circle-play"></i>&nbsp;Demo</a>
+                <a class="btn background-color-primary-blue fs-18 fw-700 p-3 border"
+                   href="{% url "users:register" %}">Sign up</a>
+            </div>
+        </div>
+        <div class="mr-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden w-100">
+            <div class="my-3 p-3">
+                <img class="img-responsive" src="{% static "assets/image/industry/industry_header_debit_cards.png" %}">
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-column flex-wrap justify-content-center align-items-center">
+        <p class="color-gray-600">Join 4,000+ companies already growing</p>
+        <div class="d-flex flex-row flex-wrap justify-content-around align-items-center w-100">
+            <img class="p-3" src="{% static "assets/image/industry/industry_company_boltshift.png" %}">
+            <img class="p-3" src="{% static "assets/image/industry/industry_company_lightbox.png" %}">
+            <img class="p-3" src="{% static "assets/image/industry/industry_company_feather_dev.png" %}">
+            <img class="p-3" src="{% static "assets/image/industry/industry_company_spherule.png" %}">
+            <img class="p-3" src="{% static "assets/image/industry/industry_company_globalbank.png" %}">
+            <img class="p-3" src="{% static "assets/image/industry/industry_company_nietzsche.png" %}">
+        </div>
+    </div>
+</div>

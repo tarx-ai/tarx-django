@@ -71,7 +71,12 @@ ol {
 .fw-bold{
   font-weight: bold;
 }
-
+.fs-60{
+  font-size:60px;
+}
+.fs-48{
+  font-size:48px;
+}
 .fs-36{
   font-size:36px;
 }
@@ -87,6 +92,11 @@ ol {
 .fs-18{
   font-size:18px;
 }
+
+.lh-60{
+  line-height:60px;
+}
+
 .lh-44{
   line-height:44px;
 }
@@ -128,6 +138,13 @@ ol {
 .background-color-gray-100{
     background-color:#F9FAFB;
 }
+
+
+.background-color-yellow{
+  background-color:#f0ff83;
+}
+
+
 .color-success-600{
   color:#039855
 }
@@ -145,8 +162,24 @@ ol {
   width:66.6;
 }
 
-
-
+.margin-top-10{
+  margin-top:10%;
+}
+.margin-top-20{
+  margin-top:20%;
+}
+.margin-bottom-10{
+  margin-bottom:10%;
+}
+.margin-bottom-20{
+  margin-bottom:20%;
+}
+.margin-top-5{
+  margin-top:5%;
+}
+.margin-bottom-5{
+  margin-bottom:5%;
+}
 .border-slim-white{
   border:1px solid #FFFFFF80;
 }
@@ -678,3 +711,7 @@ ol {
     opacity: 1;
   }
 }
+
+/* ----------------------*
+    Industry CSS
+*------------------------*/

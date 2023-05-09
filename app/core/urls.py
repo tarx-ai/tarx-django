@@ -26,6 +26,8 @@ urlpatterns = [
     path("contact", views.contact, name="contact"),
     # pricing
     path("pricing", views.pricing, name="pricing"),
+    # industry
+    path("industry", views.industry, name="industry"),
     # apps urls
     path("", include("users.urls", namespace="users")),
 ]
