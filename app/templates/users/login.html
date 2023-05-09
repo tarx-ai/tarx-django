@@ -1,5 +1,6 @@
 {% extends "common/base.html" %}
 {% load static %}
+{% load socialaccount %}
 {% block content %}
   <!-- start banner section -->
   <div class="bg-white vh_100">
@@ -59,10 +60,11 @@
                       class="btn w-100 common-anchor fw-700 lh-24"
                       id="jump-back"
                       disabled>Jump back in.</button>
-              <button class="gl-button w-100 fw-700 lh-24">
+              <a href="{% provider_login_url 'google' %}"
+                 class="btn gl-button w-100 fw-700 lh-24">
                 <img src={% static "assets/image/social-icon.svg" %} alt="social-icon" />
                 Sign in with Google
-              </button>
+              </a>
               <p class="gl-text-center text-center fw-700">
                 Don’t have an account? <span>Request Access</span>
               </p>

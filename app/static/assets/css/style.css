@@ -384,6 +384,7 @@ ol {
   border-color: rgba(135, 173, 217, 0.75);
 }
 .gl-button {
+  text-decoration: none;
   font-size: 16px;
   padding: 10px;
   background: #ffffff;

@@ -8,6 +8,8 @@ from . import views
 urlpatterns = [
     # admin
     path("admin/", admin.site.urls),
+    # third_party
+    path("accounts/", include("allauth.urls")),
     # home views
     path("", views.index, name="index"),
     path("terms", views.terms, name="terms"),
