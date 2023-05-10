@@ -16,6 +16,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", "some_secret_salt")
 DEBUG = os.getenv("DEBUG", True)
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["127.0.0.1", "staging.tarx.com", "tarx.com"]
 
 
 # Application definition
@@ -141,6 +142,7 @@ CKEDITOR_UPLOAD_PATH = "uploads/ckeditor"
 INTERNAL_IPS = [
     "0.0.0.0",
     "127.0.0.1",
+    "*",
 ]
 
 # AUTH
