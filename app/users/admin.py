@@ -8,11 +8,14 @@ from .models import User, Application
 class UserAdmin(UserAdmin):
     model = User
     list_display = (
+        "id",
+        "uuid",
         "email",
         "is_staff",
         "is_active",
     )
     list_filter = (
+        "id",
         "email",
         "is_staff",
         "is_active",
@@ -20,12 +23,7 @@ class UserAdmin(UserAdmin):
     fieldsets = (
         (
             None,
-            {
-                "fields": (
-                    "email",
-                    "password",
-                )
-            },
+            {"fields": ("email", "password", "first_name", "last_name")},
         ),
         (
             "Permissions",
@@ -55,6 +53,7 @@ class UserAdmin(UserAdmin):
 class ApplicationAdmin(admin.ModelAdmin):
     model = Application
     list_display = (
+        "id",
         "name",
         "organization",
         "interest",

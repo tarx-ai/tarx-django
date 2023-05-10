@@ -6,16 +6,14 @@
             <h6>
                 <span style="border:1px solid #87ADD9BF;
                              border-radius:10px"
-                      class="color-primary-black badge badge-primary px-3 py-1">Product: 8 min read</span>
+                      class="color-primary-black badge badge-primary px-3 py-1">Product: {{ post.mins_read }} min read</span>
             </h6>
-            <h1 class="fw-bold">Migrating to Linear 101</h1>
-            <p class="my-3">
-                Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get started.
-            </p>
+            <h1 class="fw-bold">{{ post.title }}</h1>
+            <p class="my-3">{{ post.introduction }}</p>
         </div>
         <!-- right part-->
         <div class="w-50">
-            <img class="img-max" src="{% static "assets/image/blog/post_img_1.png" %}">
+            {% if post.thumbnail %}<img class="img-max" src="{{ post.thumbnail.url }}">{% endif %}
         </div>
     </div>
 </div>

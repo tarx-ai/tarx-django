@@ -1,7 +1,15 @@
+import uuid
+import os
+
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models
+from django.templatetags.static import static
+
+
+def update_filename(instance, filename):
+    return os.path.join(f"uploads/users/{instance.uuid}", filename)
 
 
 class UserManager(BaseUserManager):
@@ -34,6 +42,15 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
+    # PROFESSION_CHOICES = (
+    #     ("Product Designer", "Product Designer"),
+    #     ("UX Designer", "UX Designer"),
+    #     ("Frontend Developer", "Engineering Manager"),
+    #     ("Frontend Developer", "Frontend Developer"),
+    #     ("Backend Developer", "Backend Developer"),
+    # )
+
+    uuid = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
     email = models.EmailField(
         verbose_name="email address",
         max_length=64,
@@ -43,6 +60,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=64, blank=True)
     first_name = models.CharField(max_length=64, blank=True)
     last_name = models.CharField(max_length=64, blank=True)
+    avatar = models.ImageField(
+        upload_to=update_filename,
+        blank=False,
+        default=static("assets/image/default_avatar.png"),
+    )
+    # profession = models.CharField(max_length=64, blank=False, default=) # TODO must be fk on other table
 
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -55,12 +78,17 @@ class User(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = "user"
         verbose_name_plural = "users"
+        indexes = [
+            models.Index(fields=["uuid", "email"]),
+        ]
 
     def __str__(self) -> str:
         return self.email
 
 
 class Application(models.Model):
+    uuid = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
+
     name = models.CharField(max_length=64)
     organization = models.CharField(max_length=64)
     interest = models.CharField(max_length=64)
@@ -75,3 +103,19 @@ class Application(models.Model):
     class Meta:
         verbose_name = "application"
         verbose_name_plural = "applications"
+
+
+class Contact(models.Model):
+    uuid = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
+
+    email = models.EmailField(max_length=128, blank=False)
+    work_email = models.EmailField(max_length=128, blank=False)
+
+    interested_product = models.CharField(max_length=128)
+    tarx_plan = models.CharField(max_length=128)
+    company = models.CharField(max_length=128, blank=False)
+    team_member = models.CharField(max_length=128)
+    problems_solve = models.CharField(max_length=1024)
+
+    def __str__(self) -> str:
+        return f"{self.email} - {self.company}"

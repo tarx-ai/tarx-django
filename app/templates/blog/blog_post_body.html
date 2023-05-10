@@ -3,24 +3,17 @@
     <div class="d-flex flex-wrap">
         <div class="d-flex flex-column col-sm-4">
             <div class="w-75">
-                <p class="fw-700" style="color:#87ADD9;font-size:16px;">Contributors</p>
-                <div class="list-group my-1">
+                <p class="fw-700" style="color:#87ADD9;font-size:16px;">Contributor</p>
+                <div class="list-group my-3">
                     <div class="d-flex flex-row justify-content-start align-items-center">
-                        <img class="rounded mx-3" src="{% static "assets/image/blog/blog_post_avatar_1.png" %}">
+                        <img class="rounded mx-3" src="{{ post.author.avatar }}">
                         <div class="d-flex flex-column align-items-center">
-                            <h5 class="fw-bold">Phoenix Baker</h5>
+                            <h5 class="fw-bold">{{ post.author.first_name }} {{ post.author.last_name }}</h5>
                             <p class="color-gray-600">Product Manager</p>
                         </div>
                     </div>
                 </div>
                 <div class="list-group my-3">
-                    <div class="d-flex flex-row justify-content-start align-items-center">
-                        <img class="rounded mx-3" src="{% static "assets/image/blog/blog_post_avatar_2.png" %}">
-                        <div class="d-flex flex-column align-items-center">
-                            <h5 class="fw-bold">Lory Bryson</h5>
-                            <p class="color-gray-600">Product Manager</p>
-                        </div>
-                    </div>
                     <hr>
                     <!-- Subscribe to newsletter-->
                     <div class="d-flex flex-column justify-content-center align-items-center mb-3">
@@ -54,18 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-8">
-            Lorem ipsum dolor sit amet, augue error mnesarchum no pri, nibh graeci mediocritatem mea an? No mel omittam deserunt consetetur, movet iudicabit his ad. Ne graeci dolorum perpetua vel, qui eu unum nibh referrentur, at modo vocibus partiendo vel? Est at ancillae volutpat, nobis nostro posidonium sit ut. In cum labores invenire electram. Ut duo ridens eligendi reprimique.
-            Te est graeco integre deseruisse, has id movet integre scribentur. Ne vis platonem explicari constituto? Sed eu facer eirmod molestiae, duo sumo stet eu. Ut vel nusquam suscipit, minimum facilisis gloriatur vim ne. Autem honestatis ex eam! Est id sapientem aliquando, eum veritus facilis ex, eos in simul corrumpit.
-            In posse dolores per. Sed explicari abhorreant scripserit ex, utinam primis tacimates mel ex, saepe facilisis nam ne. Te magna putent semper vim, duo ad placerat sadipscing neglegentur, ut zril impetus delenit pro? Per meis instructior et, id salutandi temporibus nam, te debitis oporteat mei.
-            Facilisis abhorreant in vim. In mea malorum facilisis, et his feugait ancillae definiebas, rebum sadipscing no sed? Nibh indoctum quo ei, ius consul lobortis convenire ei. Assum epicurei reformidans an ius, admodum scribentur in pri. In duo sanctus conceptam necessitatibus!
-            Cum vide etiam intellegat eu, at scaevola similique vel. At duo dicant laoreet sententiae. Alia adolescens elaboraret est ex, libris malorum interesset usu et, meis aliquip no pro. Vim diam mutat ne! Quot meliore epicurei cu pri.
-            Vix at velit utroque scripserit. Mel te quot maiorum, vim ubique dissentiet ne. Porro menandri petentium at est, perpetua suscipiantur ex pro, sed ex quem adolescens philosophia! Tale noluisse lucilius qui ei. Brute soleat hendrerit ne qui, tollit quaerendum temporibus cu vis.
-            Aliquip neglegentur sit eu, cum causae alienum ad! Vim ne reque molestiae, quas zril epicurei duo ne? Mea corrumpit splendide no. Oportere expetenda disputando per te, amet ponderum appellantur ex his. Nam lucilius menandri ut, ea efficiendi suscipiantur ius, euismod delenit alienum in his! Cu eum vidit salutandi, pro cu aperiam liberavisse!
-            Ne quem viderer probatus usu, ei eos laudem commodo. Ut meis tempor impetus per, eos nostro everti id, his persius impedit recteque at. Nam at possit accusata pertinax, sit ullum putent appareat ad, enim vidisse assueverit est eu! At per hendrerit expetendis inciderint, omnis molestiae scriptorem per et! Apeirian tractatos ius id, vim iusto dicant perpetua at!
-            Ludus reprehendunt nam eu, augue ullamcorper ex pri, id vero utamur conceptam per. Eos ipsum epicuri moderatius et, et sensibus neglegentur ius. Graeci constituam eu mel, tibique cotidieque cu sit. Ut dico debitis vis, malis commune eum te. Usu ne adolescens constituam, duo ex volutpat expetenda necessitatibus, no mel ancillae voluptaria necessitatibus. Vocibus phaedrum per ne, per nominavi deleniti at.
-            Movet nominati ne pro. Partem alterum perpetua duo no? At omnes soleat civibus est? Soluta legendos quaestio cu pro, facete ancillae phaedrum mea an. Cibo velit contentiones in eos! Veri tibique cotidieque eum ex?
-        </div>
+        <div class="col-sm-8">{{ post.content|safe }}</div>
     </div>
     <hr>
     {% include "blog/latest_posts.html" %}

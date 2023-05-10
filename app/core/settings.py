@@ -20,7 +20,12 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 THIRD_PARTY_APPS = [
+    # toolbar
     "debug_toolbar",
+    # ckeditor
+    "ckeditor",
+    "ckeditor_uploader",
+    # oauth
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
@@ -29,6 +34,8 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "users",
+    "blog",
+    "careers",
 ]
 DJANGO_APPS = [
     "django.contrib.admin",
@@ -127,6 +134,9 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Media
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
+
+# CKEDITOR
+CKEDITOR_UPLOAD_PATH = "uploads/ckeditor"
 
 INTERNAL_IPS = [
     "0.0.0.0",

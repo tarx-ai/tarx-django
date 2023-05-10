@@ -8,6 +8,7 @@ from . import views
 urlpatterns = [
     # admin
     path("admin/", admin.site.urls),
+    path("ckeditor/", include("ckeditor_uploader.urls")),
     # third_party
     path("accounts/", include("allauth.urls")),
     # home views
@@ -17,9 +18,6 @@ urlpatterns = [
     path("404", views.page_404, name="page_not_found"),
     # logout
     path("logout", views.logout, name="logout"),
-    # blog
-    path("blog", views.blog, name="blog"),
-    path("blog/<int:post_id>", views.blog_details, name="blog_post_details"),
     # careers
     path("careers", views.careers, name="careers"),
     # contact
@@ -30,6 +28,7 @@ urlpatterns = [
     path("industry", views.industry, name="industry"),
     # apps urls
     path("", include("users.urls", namespace="users")),
+    path("blog", include("blog.urls", namespace="blog")),
 ]
 if settings.DEBUG:
     import debug_toolbar

@@ -1,17 +1,30 @@
 <div class="d-flex flex-row justify-content-between my-3">
-  <a href="#" class="blog-pagination-btn"><i class="bi bi-arrow-left"></i> Previous</a>
-  <nav aria-label="...">
-    <ul class="pagination">
-      <li class="active" aria-current="page">
-        <a href="#" class="">1</a>
-      </li>
-      <li class="" aria-current="page">
-        <a href="#" class="">2</a>
-      </li>
-      <li class="" aria-current="page">
-        <a href="#" class="">3</a>
-      </li>
-    </ul>
-  </nav>
-  <a href="#"  class="blog-pagination-btn">Next <i class="bi bi-arrow-right"></i></a>
+  {% if posts.has_other_pages %}
+    {% if posts.has_previous %}
+      <a href="?page={{ posts.previous_page_number }}"
+         class="blog-pagination-btn"><i class="bi bi-arrow-left"></i> Previous</a>
+    {% else %}
+      <a class="blog-pagination-btn invisible"><i class="bi bi-arrow-left"></i> Previous</a>
+    {% endif %}
+    <nav aria-label="...">
+      <ul class="pagination">
+        {% for i in posts.paginator.page_range %}
+          {% if posts.number == i %}
+            <li class="active" aria-current="page">
+              <a href="#">{{ i }}</a>
+            </li>
+          {% else %}
+            <li aria-current="page">
+              <a href="?page={{ i }}">{{ i }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+    {% if posts.has_next %}
+      <a href="?page={{ posts.next_page_number }}" class="blog-pagination-btn">Next <i class="bi bi-arrow-right"></i></a>
+    {% else %}
+      <a class="blog-pagination-btn invisible">Next <i class="bi bi-arrow-right"></i></a>
+    {% endif %}
+  {% endif %}
 </div>
