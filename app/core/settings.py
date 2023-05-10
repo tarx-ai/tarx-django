@@ -16,7 +16,12 @@ SECRET_KEY = os.getenv("SECRET_KEY", "some_secret_salt")
 DEBUG = os.getenv("DEBUG", True)
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["127.0.0.1", "staging.tarx.com", "tarx.com"]
+CSRF_TRUSTED_ORIGINS = [
+    "127.0.0.1",
+    "https://staging.tarx.com",
+    "https://tarx.com",
+    "https://*.tarx.com",
+]
 
 
 # Application definition
