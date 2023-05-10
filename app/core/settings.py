@@ -17,7 +17,7 @@ DEBUG = os.getenv("DEBUG", True)
 
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = [
-    "127.0.0.1",
+    "http://127.0.0.1",
     "https://staging.tarx.com",
     "https://tarx.com",
     "https://*.tarx.com",
