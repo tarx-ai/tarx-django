@@ -164,8 +164,7 @@ AUTH_USER_MODEL = "users.User"
 SOCIALACCOUNT_LOGIN_ON_GET = True
 
 SITE_ID = 1
-SITE_DOMAIN = "https://staging.tarx.com"
-ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = os.getenv("ACCOUNT_DEFAULT_HTTP_PROTOCOL", "http")
 
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
@@ -176,8 +175,10 @@ SOCIALACCOUNT_PROVIDERS = {
         "AUTH_PARAMS": {
             "access_type": "online",
         },
+        "OAUTH_PKCE_ENABLED": True,
     }
 }
+
 # Logger configuration
 LOGGING = {
     "version": 1,

@@ -8,4 +8,4 @@ echo Collectin staticfiles
 python manage.py collectstatic --no-input --clear
 
 echo Running server with gunicorn
-gunicorn core.wsgi:application --workers 3 --bind 0.0.0.0:80
+gunicorn core.wsgi:application --bind 0.0.0.0:80
