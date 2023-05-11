@@ -36,6 +36,7 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
+    "django_countries",
 ]
 
 LOCAL_APPS = [

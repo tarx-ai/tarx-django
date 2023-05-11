@@ -7,6 +7,8 @@ from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 from django.templatetags.static import static
 
+from careers.models import Vacancy
+
 
 def update_filename(instance, filename):
     return os.path.join(f"uploads/users/{instance.uuid}", filename)
@@ -56,10 +58,15 @@ class User(AbstractBaseUser, PermissionsMixin):
         blank=False,
         default=static("assets/image/default_avatar.png"),
     )
-    # profession = models.CharField(max_length=64, blank=False, default=) # TODO must be fk on other table
-
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
+
+    profession = models.CharField(
+        max_length=64,
+        choices=Vacancy.PROFESSION_TYPES,
+        blank=False,
+        default=Vacancy.PROFESSION_TYPES[0],
+    )
 
     created_at = models.DateTimeField(auto_now_add=True)
 
