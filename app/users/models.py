@@ -42,17 +42,8 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    # PROFESSION_CHOICES = (
-    #     ("Product Designer", "Product Designer"),
-    #     ("UX Designer", "UX Designer"),
-    #     ("Frontend Developer", "Engineering Manager"),
-    #     ("Frontend Developer", "Frontend Developer"),
-    #     ("Backend Developer", "Backend Developer"),
-    # )
-
     uuid = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
     email = models.EmailField(
-        verbose_name="email address",
         max_length=64,
         blank=False,
         unique=True,
@@ -86,7 +77,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
-class Application(models.Model):
+class AccessRequest(models.Model):
     uuid = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
 
     name = models.CharField(max_length=64)
@@ -95,27 +86,37 @@ class Application(models.Model):
     use_case = models.CharField(max_length=512)
     humans_daily = models.IntegerField(default=1)
 
+    is_replied = models.BooleanField(default=False)
+
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "access_request"
+        verbose_name_plural = "access_requests"
 
     def __str__(self) -> str:
         return f"{self.name} - {self.organization}"
 
-    class Meta:
-        verbose_name = "application"
-        verbose_name_plural = "applications"
 
-
-class Contact(models.Model):
+class ContactRequest(models.Model):
     uuid = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
 
     email = models.EmailField(max_length=128, blank=False)
     work_email = models.EmailField(max_length=128, blank=False)
 
-    interested_product = models.CharField(max_length=128)
-    tarx_plan = models.CharField(max_length=128)
+    interested_product = models.CharField(max_length=128, default="")
+    tarx_plan = models.CharField(max_length=128, default="")
     company = models.CharField(max_length=128, blank=False)
-    team_member = models.CharField(max_length=128)
-    problems_solve = models.CharField(max_length=1024)
+    team_members = models.CharField(max_length=128, default="")
+    solved_problems = models.CharField(max_length=1024, default="")
+
+    is_replied = models.BooleanField(default=False)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "contact_request"
+        verbose_name_plural = "contact_requests"
 
     def __str__(self) -> str:
         return f"{self.email} - {self.company}"

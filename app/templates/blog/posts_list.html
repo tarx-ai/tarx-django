@@ -1,97 +1,38 @@
 {% load static %}
 <!-- need extra div-->
 <div class="row mt-3">
-    <!-- item 1 -->
-    {% for post in posts %}
-        <div class="col-xs-6 col-md-4 my-3">
-            <div class="flex flex-column">
-                {% comment %} <img class="w-100" src="{% static "assets/image/blog/post_img_1.png" %}"> {% endcomment %}
-                {% if post.thumbnail %}<img class="w-100" src="{{ post.thumbnail.url }}">{% endif %}
-                <a href="{% url "blog:post_details" post_uuid=post.uuid %}">
-                    <p class="blog-post-author-date my-3">
-                        {{ post.author.first_name }} {{ post.author.last_name }}  &#183; {{ post.created_at|date:"d M Y"  }}
-                    </p>
-                    <h3 class="color-gray-900 fw-700">{{ post.introduction }}</h3>
-                </a>
-                <div>{{ post.content|safe|truncatechars:255 }}</div>
-                <!-- list of tags -->
-                <div class="d-flex flex-row flex-wrap mt-3">
-                    <h6>
-                        <span style="background-color:#87ADD940;
-                                     color:#717BBC"
-                              class="badge badge-primary">Design</span>
-                        <span style="background-color:#FEB80540;
-                                     color:#FEB805"
-                              class="badge badge-primary">Research</span>
-                        <span style="background-color:#A8DCA540;
-                                     color:#15B79E"
-                              class="badge badge-primary">Presentation</span>
-                    </h6>
+    {% if posts %}
+        {% for post in posts %}
+            <div class="col-xs-6 col-md-4 my-3">
+                <div class="flex flex-column">
+                    {% if post.thumbnail %}<img class="w-100" src="{{ post.thumbnail.url }}">{% endif %}
+                    <a href="{% url "blog:post_details" post_uuid=post.uuid %}">
+                        <p class="blog-post-author-date my-3">
+                            {{ post.author.first_name }} {{ post.author.last_name }}  &#183; {{ post.created_at|date:"d M Y"  }}
+                        </p>
+                        <h3 class="color-gray-900 fw-700">{{ post.introduction }}</h3>
+                    </a>
+                    <div>{{ post.content|safe|truncatechars:255 }}</div>
+                    <!-- list of tags -->
+                    <div class="d-flex flex-row flex-wrap mt-3">
+                        <h6>
+                            <span style="background-color:#87ADD940;
+                                         color:#717BBC"
+                                  class="badge badge-primary">Design</span>
+                            <span style="background-color:#FEB80540;
+                                         color:#FEB805"
+                                  class="badge badge-primary">Research</span>
+                            <span style="background-color:#A8DCA540;
+                                         color:#15B79E"
+                                  class="badge badge-primary">Presentation</span>
+                        </h6>
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    {% else %}
+        <h1>There are currently no posts</h1>
+    {% endif %}
 </div>
-{% comment %} <div class="row mt-3">
-    <!-- item 1 -->
-    <div class="col-xs-6 col-md-4 my-3">
-        <div class="flex flex-column">
-            <img class="w-100" src="{% static "assets/image/blog/post_img_1.png" %}">
-            <p class="blog-post-author-date my-3">Phoenix Baker &#183; 19 Jan 2022</p>
-            <h3 class="color-gray-900 fw-700">Migrating to Linear 101</h3>
-            <div>
-                <p class="color-gray-600">
-                    Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get started.
-                </p>
-            </div>
-            <!-- list of tags -->
-            <div class="d-flex flex-row flex-wrap mt-3">
-                <h6>
-                    <span style="background-color:#87ADD940; color:#717BBC" class="badge badge-primary">Design</span>
-                    <span style="background-color:#FEB80540; color:#FEB805" class="badge badge-primary">Research</span>
-                    <span style="background-color:#A8DCA540; color:#15B79E" class="badge badge-primary">Presentation</span>
-                </h6>
-            </div>
-        </div>
-    </div>
-    <!-- item 2 -->
-    <div class="col-xs-6 col-md-4 my-3">
-        <div class="flex flex-column">
-            <img class="w-100" src="{% static "assets/image/blog/post_img_2.png" %}">
-            <p class="blog-post-author-date my-3">Lana Steiner &#183; 18 Jan 2022</p>
-            <h3 class="color-gray-900 fw-700">Building your API Stack</h3>
-            <div>
-                <p class="color-gray-600">
-                    Linear helps streamline software projects, sprints, tasks, and bug tracking. Here’s how to get started.
-                </p>
-            </div>
-            <!-- list of tags -->
-            <div class="d-flex flex-row flex-wrap mt-3">
-                <h6>
-                    <span style="background-color:#A8DCA540; color:#15B79E" class="badge badge-primary">Software Development</span>
-                    <span style="background-color:#FEB80540; color:#FEB805" class="badge badge-primary">Research</span>
-                </h6>
-            </div>
-        </div>
-    </div>
-    <!-- item 3 -->
-    <div class="col-xs-6 col-md-4 my-3">
-        <div class="flex flex-column">
-            <img class="w-100" src="{% static "assets/image/blog/post_img_3.png" %}">
-            <p class="blog-post-author-date my-3">Alec Whitten &#183; 17 Jan 2022</p>
-            <h3 class="color-gray-900 fw-700">Bill Walsh leadership lessons</h3>
-            <div>
-                <p class="color-gray-600">Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning dynasty</p>
-            </div>
-            <!-- list of tags -->
-            <div class="d-flex flex-row flex-wrap mt-3">
-                <h6>
-                    <span style="background-color:#FEB80540; color:#FEB805" class="badge badge-primary">Leadership</span>
-                    <span style="background-color:#87ADD940; color:#717BBC" class="badge badge-primary">Management</span>
-                </h6>
-            </div>
-        </div>
-    </div>
-</div> {% endcomment %}
 <!-- line separator-->
 <div style="border-top:1px solid #EAECF0;"></div>

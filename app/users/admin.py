@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import User, Application
+from .models import User, AccessRequest
 
 
 class UserAdmin(UserAdmin):
@@ -50,8 +50,8 @@ class UserAdmin(UserAdmin):
     ordering = ("email",)
 
 
-class ApplicationAdmin(admin.ModelAdmin):
-    model = Application
+class AccessRequestAdmin(admin.ModelAdmin):
+    model = AccessRequest
     list_display = (
         "id",
         "name",
@@ -70,4 +70,4 @@ class ApplicationAdmin(admin.ModelAdmin):
 
 
 admin.site.register(User, UserAdmin)
-admin.site.register(Application, ApplicationAdmin)
+admin.site.register(AccessRequest, AccessRequestAdmin)

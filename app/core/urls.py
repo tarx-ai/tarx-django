@@ -20,8 +20,6 @@ urlpatterns = [
     path("logout", views.logout, name="logout"),
     # careers
     path("careers", views.careers, name="careers"),
-    # contact
-    path("contact", views.contact, name="contact"),
     # pricing
     path("pricing", views.pricing, name="pricing"),
     # industry

@@ -26,4 +26,3 @@ def test_application():
         },
     )
     assert response.status_code == 200
-    # assert Application.objects.get(name=TEST_NAME)

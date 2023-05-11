@@ -37,10 +37,6 @@ def careers(request):
     return render(request, "careers/careers_index.html")
 
 
-def contact(request):
-    return render(request, "contact/contact_index.html")
-
-
 def pricing(request):
     return render(request, "pricing/pricing_index.html")
 

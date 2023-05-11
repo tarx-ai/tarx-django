@@ -15,7 +15,7 @@
             <form class="d-flex justify-content-end">
               <a class="btn login-btn fw-700 lh-24" href="{% url 'users:login' %}">Log in</a>
               <a class="btn request-btn fw-700 lh-24"
-                 href="{% url 'users:register' %}"
+                 href="{% url 'users:access_request' %}"
                  type="submit">Request Access</a>
             </form>
           </div>
@@ -229,56 +229,4 @@
       </div>
     </div>
   </div>
-  <!-- start footer section -->
-  <footer>
-    <div class="container">
-      <div class="border-top">
-        <div class="row align-items-center">
-          <div class="col-md-5">
-            <a href="www.tarx.com" class="footer-logo">
-              <img src="{% static 'assets/image/black-logo.svg' %}" alt="black-logo" />
-              <span class="fw-700">Tarx.com</span>
-            </a>
-            <a href="mailto:howdy@tarx.com" class="footer-mail d-block lh-24">mailto:howdy@tarx.com</a>
-          </div>
-          <div class="col-md-7">
-            <div class="widget">
-              <p class="widget-text fw-700 lh-24">
-                AI, huh? Join 2,300+ subscribers who want to learn what we’re
-                learn while we learn it.
-              </p>
-              <div class="d-flex email-box">
-                <input type="email"
-                       class="form-control"
-                       id=""
-                       placeholder="Enter your email" />
-                <button class="btn request-btn fw-700 lh-24 subscribe-btn" type="submit">Subscribe</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr class="footer-line m-0" />
-      <div class="footer-bottom">
-        <div class="row">
-          <div class="col-md-6 order-1 order-md-0">
-            <p class="mb-0 lh-24">© 2022-2023 TARX INC. All rights reserved.</p>
-          </div>
-          <div class="col-md-6 order-0 order-md-1">
-            <ul class="widget-link text-md-end">
-              <li>
-                <a href="{% url 'terms' %}" class="lh-24">Terms of Use</a>
-              </li>
-              <li>
-                <a href="{% url 'privacy_policy' %}" class="lh-24 mx-3">Privacy</a>
-              </li>
-              {% comment %} <li>
-                  <a href="{% url 'user:cookies' %}" class="lh-24">Cookies</a>
-              </li> {% endcomment %}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 {% endblock content %}
