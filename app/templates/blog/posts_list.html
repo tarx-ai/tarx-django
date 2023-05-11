@@ -8,7 +8,12 @@
                     {% if post.thumbnail %}<img class="w-100" src="{{ post.thumbnail.url }}">{% endif %}
                     <a href="{% url "blog:post_details" post_uuid=post.uuid %}">
                         <p class="blog-post-author-date my-3">
-                            {{ post.author.first_name }} {{ post.author.last_name }}  &#183; {{ post.created_at|date:"d M Y"  }}
+                            {% if post.author %}
+                                {{ post.author.first_name }} {{ post.author.last_name }}
+                            {% else %}
+                                &#183;
+                            {% endif %}
+                            {{ post.created_at|date:"d M Y"  }}
                         </p>
                         <h3 class="color-gray-900 fw-700">{{ post.introduction }}</h3>
                     </a>

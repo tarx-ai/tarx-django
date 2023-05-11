@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout as auth_logout
 
+from blog.models import Post
+
 
 def index(request):
-    return render(request, "home/home.html")
+    latest_posts = Post.objects.filter(is_active=True).order_by("-created_at").all()[:3]
+    return render(request, "home/home.html", {"latest_posts": latest_posts})
 
 
 def logout(request):
