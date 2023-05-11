@@ -164,6 +164,8 @@ AUTH_USER_MODEL = "users.User"
 SOCIALACCOUNT_LOGIN_ON_GET = True
 
 SITE_ID = 1
+SITE_DOMAIN = "https://staging.tarx.com"
+
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
         "SCOPE": [
