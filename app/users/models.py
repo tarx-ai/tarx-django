@@ -83,7 +83,7 @@ class AccessRequest(models.Model):
     name = models.CharField(max_length=64)
     organization = models.CharField(max_length=64)
     interest = models.CharField(max_length=64)
-    use_case = models.CharField(max_length=512)
+    use_case = models.TextField(max_length=1024)
     humans_daily = models.IntegerField(default=1)
 
     is_replied = models.BooleanField(default=False)
