@@ -9,7 +9,7 @@
             <div class="p-3">
                 <a href="#" class="fs-14 br-10 border color-black bg-white fw-700 p-3">Our customers</a>
                 <a href="#"
-                   class="fs-14 br-10 border background-color-primary-blue color-black fw-700 p-3">Create account</a>
+                   class="fs-14 br-10 border background-color-primary-blue color-black fw-700 p-3 {% if request.user.is_authenticated %} invisible {% else %}  {% endif %}">Create account</a>
             </div>
         </div>
     </div>

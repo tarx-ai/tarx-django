@@ -67,8 +67,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     class Meta:
-        verbose_name = "user"
-        verbose_name_plural = "users"
+        verbose_name = "User"
+        verbose_name_plural = "Users"
         indexes = [
             models.Index(fields=["uuid", "email"]),
         ]
@@ -91,8 +91,8 @@ class AccessRequest(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name = "access_request"
-        verbose_name_plural = "access_requests"
+        verbose_name = "Access Request"
+        verbose_name_plural = "Access Requests"
 
     def __str__(self) -> str:
         return f"{self.name} - {self.organization}"
@@ -115,8 +115,8 @@ class ContactRequest(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name = "contact_request"
-        verbose_name_plural = "contact_requests"
+        verbose_name = "Contact Request"
+        verbose_name_plural = "Contact Requests"
 
     def __str__(self) -> str:
         return f"{self.email} - {self.company}"

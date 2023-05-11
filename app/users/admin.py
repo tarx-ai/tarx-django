@@ -1,8 +1,9 @@
 # Register your models here.
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from allauth.socialaccount.models import SocialAccount, SocialToken
 
-from .models import User, AccessRequest
+from .models import User, AccessRequest, ContactRequest
 
 
 class UserAdmin(UserAdmin):
@@ -15,7 +16,6 @@ class UserAdmin(UserAdmin):
         "is_active",
     )
     list_filter = (
-        "id",
         "email",
         "is_staff",
         "is_active",
@@ -69,5 +69,36 @@ class AccessRequestAdmin(admin.ModelAdmin):
     ordering = ("created_at",)
 
 
+class ContactRequestAdmin(admin.ModelAdmin):
+    model = ContactRequest
+    list_display = (
+        "id",
+        "email",
+        "work_email",
+        "interested_product",
+        "tarx_plan",
+        "company",
+        "team_members",
+        "solved_problems",
+        "is_replied",
+        "created_at",
+    )
+    list_filter = (
+        "email",
+        "work_email",
+        "created_at",
+    )
+    search_fields = (
+        "email",
+        "work_email",
+    )
+    ordering = ("created_at",)
+
+
 admin.site.register(User, UserAdmin)
 admin.site.register(AccessRequest, AccessRequestAdmin)
+admin.site.register(ContactRequest, ContactRequestAdmin)
+
+# Hiding
+admin.site.unregister(SocialAccount)
+admin.site.unregister(SocialToken)

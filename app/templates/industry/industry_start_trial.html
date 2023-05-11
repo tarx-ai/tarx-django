@@ -5,7 +5,8 @@
             <h1 class="fw-700 color-gray-900">Join over 4,000+ startups growing with Untitled</h1>
             <p class="color-gray-600">Start your 30-day free trial today.</p>
             <div class="d-flex flex-row flex-wrap justify-content-center align-items-center w-100">
-                <a class="btn bg-white fs-18 py-md-1 fw-700 border m-3">Learn more</a>
+                <a href="{% url 'pricing' %}"
+                   class="btn bg-white fs-18 py-md-1 fw-700 border m-3">Learn more</a>
                 <a class="btn background-color-primary-blue py-md-1 fs-18 fw-700 m-3"
                    href="{% url "users:access_request" %}">Get started</a>
             </div>

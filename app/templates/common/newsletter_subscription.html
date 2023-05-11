@@ -6,8 +6,14 @@
         <div class="d-flex justify-content-center align-items-center flex-wrap">
             <form class="row my-3 px-3">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Enter your email">
-                    <button class ="mx-3 btn fof-search-button" disabled>Subscribe</button>
+                    <input type="text"
+                           id="emailInput"
+                           class="form-control"
+                           placeholder="Enter your email">
+                    <button type="submit"
+                            class="mx-3 btn fof-search-button"
+                            id="subscribeBtn"
+                            disabled>Subscribe</button>
                 </div>
             </form>
         </div>
@@ -16,3 +22,14 @@
         </p>
     </div>
 </div>
+<script>
+    emailInput = document.getElementById("emailInput");
+    subscribeBtn = document.getElementById("subscribeBtn");
+    emailInput.addEventListener("change",()=>{
+           if(emailInput.value.length > 0){
+        subscribeBtn.disabled = false;
+    }else{
+subscribeBtn.disabled = true;
+    }});
+
+</script>

@@ -183,9 +183,11 @@
                             </div>
                         </div>
                     </div>
-                    <a class="btn request-btn fw-700 lh-24 m-30"
-                       type="submit"
-                       href="{% url 'users:access_request' %}">Request access to the private beta</a>
+                    {% if not request.user.is_authenticated %}
+                        <a class="btn request-btn fw-700 lh-24 m-30"
+                           type="submit"
+                           href="{% url 'users:access_request' %}">Request access to the private beta</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
