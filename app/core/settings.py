@@ -165,6 +165,7 @@ SOCIALACCOUNT_LOGIN_ON_GET = True
 
 SITE_ID = 1
 SITE_DOMAIN = "https://staging.tarx.com"
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
