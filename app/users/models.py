@@ -7,8 +7,6 @@ from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 from django.templatetags.static import static
 
-from careers.models import Vacancy
-
 
 def update_filename(instance, filename):
     return os.path.join(f"uploads/users/{instance.uuid}", filename)

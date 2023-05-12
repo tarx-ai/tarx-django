@@ -36,7 +36,7 @@ jobs:
       - name: Run tests
         run: |
           cd app
-          pytest
+          python manage.py tests --settings core.test_settings
 
   build:
     needs: tests

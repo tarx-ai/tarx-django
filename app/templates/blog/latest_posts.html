@@ -10,7 +10,7 @@
             <!-- item 1 -->
             {% for lp in latest_posts %}
                 <div class="col-xs-6 col-md-4 my-3">
-                    <a href="">
+                    <a href="{% url "blog:post_details" post_uuid=lp.uuid %}">
                         <div class="flex flex-column">
                             {% if lp.thumbnail %}<img class="w-100" src="{{ lp.thumbnail.url }}">{% endif %}
                             <p class="blog-post-author-date my-3">

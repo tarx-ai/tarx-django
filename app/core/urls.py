@@ -25,7 +25,7 @@ urlpatterns = [
     # apps urls
     path("", include("users.urls", namespace="users")),
     path("", include("careers.urls", namespace="careers")),
-    path("blog", include("blog.urls", namespace="blog")),
+    path("blog/", include("blog.urls", namespace="blog")),
 ]
 if settings.DEBUG:
     import debug_toolbar
