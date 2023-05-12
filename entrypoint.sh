@@ -7,5 +7,8 @@ python manage.py migrate --noinput
 echo Collectin staticfiles
 python manage.py collectstatic --no-input --clear
 
+echo Creating basic professions
+python manage.py create_professions
+
 echo Running server with gunicorn
 gunicorn core.wsgi:application --bind 0.0.0.0:80
