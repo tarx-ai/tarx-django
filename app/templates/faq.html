@@ -1,0 +1,38 @@
+{% extends "common/base.html" %}
+{% load static %}
+{% block content %}
+    <!-- start banner section -->
+    <div class="bg-white vh_100">
+        <div class="container margin-bottom-5">
+            {% include "common/header_light.html" %}
+            <div class="d-flex flex-column justify-content-center margin-top-5 ">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="fs-36 fw-700">Frequently asked questions</h1>
+                    <p class="color-gray-600 fs-20 fw-400">Everything you need to know about the product and billing.</p>
+                </div>
+            </div>
+            <div class="accordion margin-top-5" id="accordionExample">
+                {% for q in questions %}
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading{{ q.id }}">
+                            <button style="color:#101828;
+                                           font-weight:400"
+                                    class="accordion-button fs-18"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse{{ q.id }}"
+                                    aria-expanded="true"
+                                    aria-controls="collapse{{ q.id }}">{{ q.question }}</button>
+                        </h2>
+                        <div id="collapse{{ q.id }}"
+                             class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                             aria-labelledby="heading{{ q.id }}"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">{{ q.answer }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

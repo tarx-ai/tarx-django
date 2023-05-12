@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from allauth.socialaccount.models import SocialAccount, SocialToken
 
-from .models import User, AccessRequest, ContactRequest
+from .models import User, AccessRequest, ContactRequest, FAQ
 
 
 class UserAdmin(UserAdmin):
@@ -95,6 +95,22 @@ class ContactRequestAdmin(admin.ModelAdmin):
     ordering = ("created_at",)
 
 
+class FAQAdmin(admin.ModelAdmin):
+    model = FAQ
+    list_display = (
+        "id",
+        "question",
+        "answer",
+    )
+    list_filter = ("question",)
+    search_fields = (
+        "question",
+        "answer",
+    )
+    ordering = ("id",)
+
+
+admin.site.register(FAQ, FAQAdmin)
 admin.site.register(User, UserAdmin)
 admin.site.register(AccessRequest, AccessRequestAdmin)
 admin.site.register(ContactRequest, ContactRequestAdmin)

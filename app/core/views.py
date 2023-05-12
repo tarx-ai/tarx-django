@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import logout as auth_logout
 
 from blog.models import Post
+from users.models import FAQ
 
 
 def index(request):
@@ -42,3 +43,8 @@ def pricing(request):
 
 def industry(request):
     return render(request, "industry/industry_index.html")
+
+
+def faq(request):
+    questions = FAQ.objects.all()
+    return render(request, "faq.html", {"questions": questions})

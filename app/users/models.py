@@ -128,3 +128,15 @@ class ContactRequest(models.Model):
 
     def __str__(self) -> str:
         return f"{self.email} - {self.company}"
+
+
+class FAQ(models.Model):
+    question = models.CharField(max_length=512)
+    answer = models.TextField(max_length=2048)
+
+    class Meta:
+        verbose_name = "Frequently asked question"
+        verbose_name_plural = "Frequently asked questions"
+
+    def __str__(self) -> str:
+        return f"{self.question[:15]}"
