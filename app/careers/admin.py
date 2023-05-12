@@ -1,6 +1,17 @@
 from django.contrib import admin
 
-from .models import Vacancy
+from .models import Vacancy, Profession
+
+
+class ProfessionAdmin(admin.ModelAdmin):
+    model = Profession
+    list_display = [
+        "id",
+        "title",
+    ]
+
+    list_filter = ("title",)
+    search_fields = ("title",)
 
 
 class VacancyAdmin(admin.ModelAdmin):
@@ -16,11 +27,18 @@ class VacancyAdmin(admin.ModelAdmin):
         "country",
         "city",
         "created_at",
+        "is_active",
     ]
 
-    list_filter = ()
-    search_fields = ()
-    ordering = ("created_at",)
+    list_filter = (
+        "is_active",
+        "min_salary",
+        "max_salary",
+        "created_at",
+    )
+    search_fields = ("title",)
+    ordering = ("-created_at",)
 
 
 admin.site.register(Vacancy, VacancyAdmin)
+admin.site.register(Profession, ProfessionAdmin)

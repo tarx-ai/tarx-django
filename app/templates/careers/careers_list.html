@@ -2,83 +2,55 @@
 <div class="container">
     <div class="d-flex flex-column justify-content-center flex-wrap mb-5">
         <hr>
-        <div class="d-flex flex-wrap flex-column w-100 px-3 my-5">
-            <div class="d-flex flex-row">
-                <!-- Title of position-->
-                <div class="d-flex flex-column align-items-start mx-5 w-25">
-                    <h6>Design</h6>
-                    <p style="color:#667085">Open positions in our design team</p>
-                </div>
-                <!-- Positions-->
-                <div class="d-flex flex-column align-items-start flex-wrap w-75">
-                    <div class="d-flex flex-column flex-wrap justify-content-center careers-position-container w-100 mb-3">
-                        <div class="d-flex flex-row flex-wrap">
-                            <p>Product Designer</p>
-                            <h6>
-                                <span style="color:#175CD3;
-                                             background-color:#EFF8FF"
-                                      class="badge mx-3 px-3">&#8226; Design</span>
-                            </h6>
-                            <h6>
-                                <span style="color:#344054;
-                                             background-color:#F2F4F7"
-                                      class="badge mx-3 px-3">Melbourne,AU</span>
-                            </h6>
-                        </div>
-                        <p>We`re looking for a mid-level UX designer to join our team.</p>
-                        <div class="d-flex flex-row justify-content-start flex-wrap">
-                            <div>
-                                <i class="bi bi-alarm"></i> Full-Time
-                            </div>
-                            &nbsp;
-                            <div>
-                                <i class="bi bi-currency-dollar"></i>80k - 100k
-                            </div>
-                        </div>
+        <div class="d-flex flex-wrap flex-column w-100 px-3">
+            {% for profession in professions %}
+                <div class="d-flex flex-row mt-md-3">
+                    <!-- Title of position-->
+                    <div class="d-flex flex-column align-items-start mx-5 w-25">
+                        <h6>{{ profession.title }}</h6>
+                        <p style="color:#667085">Open positions in our {{ profession.title|lower }} team</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-start flex-wrap w-75">
+                        <!-- Positions-->
+                        {% if vacancies %}
+                            {% for vacancy in vacancies %}
+                                {% if vacancy.profession.title == profession.title %}
+                                    <div class="d-flex flex-column flex-wrap justify-content-center careers-position-container w-100 mb-3">
+                                        <div class="d-flex flex-row flex-wrap">
+                                            <p>{{ vacancy.title }}</p>
+                                            <h6>
+                                                <span style="color:#175CD3;
+                                                             background-color:#EFF8FF"
+                                                      class="badge mx-3 px-3">&#8226; {{ vacancy.profession.title }}</span>
+                                            </h6>
+                                            <h6>
+                                                <span style="color:#344054;
+                                                             background-color:#F2F4F7"
+                                                      class="badge mx-3 px-3">{{ vacancy.city }},{{ vacancy.country }}
+                                                    <img src="{{ vacancy.country.flag }}">
+                                                </span>
+                                            </h6>
+                                        </div>
+                                        <p>{{ vacancy.description }}</p>
+                                        <div class="d-flex flex-row justify-content-start flex-wrap">
+                                            <div>
+                                                <i class="bi bi-alarm"></i> {{ vacancy.shift }}
+                                            </div>
+                                            &nbsp;
+                                            <div>
+                                                <i class="bi bi-currency-dollar"></i>{{ vacancy.min_salary }}k - {{ vacancy.max_salary }}k
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                        {% endif %}
                     </div>
                 </div>
-            </div>
+                <hr>
+            {% endfor %}
         </div>
-        <hr>
-        <hr>
-        <div class="d-flex flex-column w-100 px-3 my-5">
-            <div class="d-flex flex-row">
-                <!-- Title of position-->
-                <div class="d-flex flex-column align-items-start mx-5 w-25">
-                    <h6>Software Development</h6>
-                    <p style="color:#667085">Open positions in our software team</p>
-                </div>
-                <!-- Positions-->
-                <div class="d-flex flex-column align-items-start flex-wrap w-75">
-                    <div class="d-flex flex-column flex-wrap justify-content-center careers-position-container w-100 mb-3">
-                        <div class="d-flex flex-row flex-wrap">
-                            <p>Engineering Manager</p>
-                            <h6>
-                                <span style="color:#C11574;
-                                             background-color:#FDF2FA"
-                                      class="badge mx-3 px-3">&#8226; Software</span>
-                            </h6>
-                            <h6>
-                                <span style="color:#344054;
-                                             background-color:#F2F4F7"
-                                      class="badge mx-3 px-3">Melbourne,AU</span>
-                            </h6>
-                        </div>
-                        <p>We`re looking for a mid-level UX designer to join our team.</p>
-                        <div class="d-flex flex-row justify-content-start flex-wrap">
-                            <div>
-                                <i class="bi bi-alarm"></i> Full-Time
-                            </div>
-                            &nbsp;
-                            <div>
-                                <i class="bi bi-currency-dollar"></i>80k - 100k
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
         <!-- image -->
         <img alt="office" class="w-100 mt-5" src="{% static "assets/image/careers/careers_picture.png" %}">
     </div>

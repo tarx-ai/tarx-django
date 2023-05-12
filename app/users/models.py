@@ -61,11 +61,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
 
-    profession = models.CharField(
-        max_length=64,
-        choices=Vacancy.PROFESSION_TYPES,
-        blank=False,
-        default=Vacancy.PROFESSION_TYPES[0],
+    profession = models.ForeignKey(
+        "careers.Profession",
+        on_delete=models.SET_NULL,
+        null=True,
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -85,7 +84,11 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class AccessRequest(models.Model):
-    uuid = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
+    uuid = models.UUIDField(
+        primary_key=False,
+        default=uuid.uuid4,
+        editable=False,
+    )
 
     name = models.CharField(max_length=64)
     organization = models.CharField(max_length=64)

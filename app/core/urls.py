@@ -18,14 +18,13 @@ urlpatterns = [
     path("404", views.page_404, name="page_not_found"),
     # logout
     path("logout", views.logout, name="logout"),
-    # careers
-    path("careers", views.careers, name="careers"),
     # pricing
     path("pricing", views.pricing, name="pricing"),
     # industry
     path("industry", views.industry, name="industry"),
     # apps urls
     path("", include("users.urls", namespace="users")),
+    path("", include("careers.urls", namespace="careers")),
     path("blog", include("blog.urls", namespace="blog")),
 ]
 if settings.DEBUG:
