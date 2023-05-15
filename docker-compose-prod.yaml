@@ -12,8 +12,6 @@ services:
       PGUSER: ${DATABASE_USERNAME:-postgres}
       PGDATABASE: ${DATABASE_NAME:-postgres}
       PGPASSWORD: ${DATABASE_PASSWORD:-password}
-    ports:
-      - 127.0.0.1:${DATABASE_LOCAL_PORT:-5432}:5432
     restart: always
 
   app:
@@ -22,10 +20,13 @@ services:
     command: bash entrypoint.sh
     volumes:
       - .:/usr/src/app/
-    ports:
-      - 0.0.0.0:8000:80
     env_file:
-      - .env
+      - staging.env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.tarx_cms.rule=Host(`staging.tarx.com`)"
+      - "traefik.http.routers.tarx_cms.tls=true"
+      - "traefik.http.routers.tarx_cms.tls.certresolver=myresolver"
     depends_on:
       - db
     links:
@@ -33,3 +34,8 @@ services:
 
 volumes:
   db_data:
+
+
+networks:
+  default:
+    name: tarx_network
