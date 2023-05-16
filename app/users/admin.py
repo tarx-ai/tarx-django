@@ -6,12 +6,14 @@ from allauth.socialaccount.models import SocialAccount, SocialToken
 from .models import User, AccessRequest, ContactRequest, FAQ
 
 
-class UserAdmin(UserAdmin):
+class MyUserAdmin(UserAdmin):
     model = User
+
     list_display = (
         "id",
         "uuid",
         "email",
+        "profession",
         "is_staff",
         "is_active",
     )
@@ -22,31 +24,65 @@ class UserAdmin(UserAdmin):
     )
     fieldsets = (
         (
-            None,
-            {"fields": ("email", "password", "first_name", "last_name")},
+            "Base",
+            {
+                "fields": (
+                    "email",
+                    "username",
+                    "profession",
+                    "first_name",
+                    "last_name",
+                ),
+            },
         ),
         (
             "Permissions",
-            {"fields": ("is_staff", "is_active")},
+            {
+                "fields": ("is_staff", "is_active", "groups"),
+            },
         ),
     )
     add_fieldsets = (
         (
-            None,
+            "Base info",
             {
                 "fields": (
                     "email",
                     "username",
                     "first_name",
                     "last_name",
-                    "password",
-                    "is_active",
-                    "is_staff",
+                    "profession",
                 )
             },
         ),
+        (
+            "Password",
+            {
+                "classes": ["wide"],
+                "fields": (
+                    "password1",
+                    "password2",
+                ),
+            },
+        ),
+        (
+            "Permissions",
+            {
+                "classes": ["wide"],
+                "fields": (
+                    "is_superuser",
+                    "is_staff",
+                    "is_active",
+                    "groups",
+                ),
+            },
+        ),
     )
-    search_fields = ("email",)
+    search_fields = (
+        "email",
+        "first_name",
+        "last_name",
+    )
     ordering = ("email",)
 
 
@@ -110,8 +146,8 @@ class FAQAdmin(admin.ModelAdmin):
     ordering = ("id",)
 
 
+admin.site.register(User, MyUserAdmin)
 admin.site.register(FAQ, FAQAdmin)
-admin.site.register(User, UserAdmin)
 admin.site.register(AccessRequest, AccessRequestAdmin)
 admin.site.register(ContactRequest, ContactRequestAdmin)
 
