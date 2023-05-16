@@ -15,7 +15,14 @@ def blog(request):
         posts = paginator.page(1)
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
-    return render(request, "blog/blog_index.html", {"posts": posts})
+    return render(
+        request,
+        "blog/blog_index.html",
+        {
+            "posts": posts,
+            "latest_post": posts_list[0],
+        },
+    )
 
 
 def blog_details(request, post_uuid):

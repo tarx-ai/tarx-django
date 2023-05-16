@@ -4,7 +4,7 @@ from .models import Vacancy, Profession
 
 
 def careers(request, location=None):
-    vacancies = Vacancy.objects
+    vacancies = Vacancy.objects.filter(is_active=True)
     location = request.GET.get("location")
     if location:
         vacancies = vacancies.filter(country__name=location)

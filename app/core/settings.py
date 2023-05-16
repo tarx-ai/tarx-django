@@ -36,7 +36,10 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
+    # country picker
     "django_countries",
+    # color
+    "colorfield",
 ]
 
 LOCAL_APPS = [

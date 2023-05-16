@@ -1,21 +1,20 @@
 {% load static %}
 <div class="d-flex flex-column">
     <img src="{% static "assets/image/blog/latest_post.png" %}">
-    <p class="my-3 blog-post-author-date">Olivia Rhye &#183;20 Jan 2022</p>
-    <h2 class="color-gray-900 fw-700">UX review presentations</h2>
-    <div>How do you create compelling presentations that wow your colleagues and impress your managers?</div>
+    <a href="{% url "blog:post_details" post_uuid=post.uuid %}">
+        <p class="my-3 blog-post-author-date">
+            {{ post.author.first_name }} {{ post.author.last_name }} &#183;{{ post.created_at }}
+        </p>
+        <h2 class="color-gray-900 fw-700">{{ post.introduction }}</h2>
+    </a>
     <!-- list of tags -->
     <div class="d-flex flex-row flex-wrap flex-wrap mt-3">
         <h6>
-            <span style="background-color:#87ADD940;
-                         color:#717BBC"
-                  class="badge badge-primary">Design</span>
-            <span style="background-color:#FEB80540;
-                         color:#FEB805"
-                  class="badge badge-primary">Research</span>
-            <span style="background-color:#A8DCA540;
-                         color:#15B79E"
-                  class="badge badge-primary">Presentation</span>
+            {% for tag in post.tags.all %}
+                <span style="background-color:{{ tag.background_color }};
+                             color:{{ tag.text_color }}"
+                      class="badge badge-primary">{{ tag }}</span>
+            {% endfor %}
         </h6>
     </div>
 </div>
